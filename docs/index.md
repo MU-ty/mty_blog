@@ -18,8 +18,8 @@ Welcome to MU-ty's Blog.
 - 👋 Hi, I’m @MU-ty. 
 - 👀 I’m interested in coding. And I'm a **TRAE Fellow** based on Guilin and Nanning.
 - 🌱 I’m currently learning frontend and agent.
-- 💞️ I’m looking to collaborate on !(LT)[https://github.com/hust-open-atom-club/LT].
-- 📫 How to reach me 3417633465@qq.com
+- 💞️ I’m looking to collaborate on [LT](https://github.com/hust-open-atom-club/LT).
+- 📫 How to reach me 3417633465@qq.com.
 - 😄 Pronouns: Wanwu
 - ⚡ Fun fact: I'm single
 
@@ -46,3 +46,4 @@ Welcome to MU-ty's Blog.
 MU-ty/MU-ty is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+
