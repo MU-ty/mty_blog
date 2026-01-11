@@ -1,0 +1,44 @@
+site_name: MU-ty's Blog
+site_url: https://mydomain.org/mysite
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      use_pygments: true
+      pygments_style: monokai
+      noclasses: true
+      guess_lang: false
+  - pymdownx.inlinehilite:
+      style_plain_text: true
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.footer
+    - navigation.path
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js
+  - javascripts/katex-render.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/MU-ty
