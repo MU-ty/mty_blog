@@ -51,6 +51,8 @@ nav:
       - 0128_最长连续序列: leetcode/哈希/0128. 最长连续序列.md
     - 双指针:
       - 0283_移动零: leetcode/双指针/0283. 移动零.md
+      - 0011_盛最多水的容器: leetcode/双指针/0011.盛最多水的容器.md
+      - 0015_三数之和: leetcode/双指针/0015.三数之和.md
   - Agent: Agent/index.md
   - Backend: Backend/index.md
   - Deep Learning: Deep Learning/index.md
