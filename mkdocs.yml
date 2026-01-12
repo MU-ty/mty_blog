@@ -41,3 +41,21 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/MU-ty
+
+nav:
+  - 首页: index.md  
+  - LeetCode 刷题:
+    - 哈希:
+      - 0001_两数之和: leetcode/哈希/0001.两数之和.md
+      - 0049_字母异位词分组: leetcode/哈希/0049. 字母异位词分组.md
+      - 0128_最长连续序列: leetcode/哈希/0128. 最长连续序列.md
+    - 双指针:
+      - 0283_移动零: leetcode/双指针/0283. 移动零.md
+  - Agent: Agent/index.md
+  - Backend: Backend/index.md
+  - Deep Learning: Deep Learning/index.md
+  - Frontend: Frontend/index.md
+  - Python:
+    - 第一章: python/第一章 python程序设计基础.md
+    - 第二章: python/第二章 面向对象程序设计.md
+    - 第三章: python/第三章 Python中的数据结构、模式匹配和算法理解.md
