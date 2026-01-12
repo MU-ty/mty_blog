@@ -45,6 +45,7 @@ extra:
 nav:
   - 首页: index.md  
   - LeetCode 刷题:
+    - 介绍: leetcode/index.md
     - 哈希:
       - 0001_两数之和: leetcode/哈希/0001.两数之和.md
       - 0049_字母异位词分组: leetcode/哈希/0049. 字母异位词分组.md
@@ -53,6 +54,7 @@ nav:
       - 0283_移动零: leetcode/双指针/0283. 移动零.md
       - 0011_盛最多水的容器: leetcode/双指针/0011.盛最多水的容器.md
       - 0015_三数之和: leetcode/双指针/0015.三数之和.md
+      - 0042_接雨水: leetcode/双指针/0042.接雨水.md
   - Agent: Agent/index.md
   - Backend: Backend/index.md
   - Deep Learning: Deep Learning/index.md
