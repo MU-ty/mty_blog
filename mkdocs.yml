@@ -70,3 +70,5 @@ nav:
     - 第一章: python/第一章 python程序设计基础.md
     - 第二章: python/第二章 面向对象程序设计.md
     - 第三章: python/第三章 Python中的数据结构、模式匹配和算法理解.md
+  - CS168:
+    - Home: CS168/home.md
