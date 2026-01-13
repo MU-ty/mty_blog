@@ -57,6 +57,7 @@ nav:
       - 0042_接雨水: leetcode/双指针/0042.接雨水.md
     - 链表:
       - 0160_相交链表: leetcode/链表/0160. 相交链表.md
+      - 0206_反转链表: leetcode/链表/0206. 反转链表.md
   
 
   - Agent: Agent/index.md
