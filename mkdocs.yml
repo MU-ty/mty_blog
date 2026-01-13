@@ -58,6 +58,8 @@ nav:
     - 链表:
       - 0160_相交链表: leetcode/链表/0160. 相交链表.md
       - 0206_反转链表: leetcode/链表/0206. 反转链表.md
+      - 0234_回文链表: leetcode/链表/0234.回文链表.md
+      - 0141_环形链表Ⅰ: leetcode/链表/0141.环形链表Ⅰ.md
   
 
   - Agent: Agent/index.md
