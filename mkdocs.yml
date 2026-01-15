@@ -63,6 +63,7 @@ nav:
       - 0142_环形链表Ⅱ: leetcode/链表/0142. 环形链表 Ⅱ.md
       - 0021_合并两个有序链表: leetcode/链表/0021.合并两个有序链表.md
       - 0002_两数相加: leetcode/链表/0002.两数相加.md
+      - 0086_分隔链表: leetcode/链表/0086.分隔链表.md
   
 
   - Agent: Agent/index.md
