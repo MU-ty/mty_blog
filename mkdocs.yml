@@ -69,7 +69,11 @@ nav:
 
   - Agent: Agent/index.md
   - Backend: Backend/index.md
-  - Deep Learning: Deep Learning/index.md
+  - Deep Learning: 
+    - Deep Learning/index.md
+    - 第四章:
+      - 总述: Deep Learning/第四章/index.md
+      
   - Frontend: Frontend/index.md
   - Python:
     - 第一章: python/第一章 python程序设计基础.md
