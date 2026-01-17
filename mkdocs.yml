@@ -67,6 +67,9 @@ nav:
       - 0002_两数相加: leetcode/链表/0002.两数相加.md
       - 0086_分隔链表: leetcode/链表/0086.分隔链表.md
       - 0019_删除链表的倒数第N个节点: leetcode/链表/0019.删除链表的倒数第N个结点.md
+    
+    - 补充:
+      - 二叉堆: leetcode/补充/二叉堆.md
   
 
   - Agent: Agent/index.md
