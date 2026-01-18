@@ -42,6 +42,9 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/MU-ty
 
+plugins:
+  - search
+
 nav:
   - 首页: index.md  
   - LeetCode 刷题:
@@ -67,6 +70,14 @@ nav:
       - 0002_两数相加: leetcode/链表/0002.两数相加.md
       - 0086_分隔链表: leetcode/链表/0086.分隔链表.md
       - 0019_删除链表的倒数第N个节点: leetcode/链表/0019.删除链表的倒数第N个结点.md
+
+    - 二叉树:
+      - 引入: leetcode/二叉树/引入.md
+
+    - 二分查找:
+      - 引入: leetcode/二分查找/引入.md
+      - 0035_搜索插入位置: leetcode/二分查找/0035.搜索插入位置.md
+      - 0074_搜索二维矩阵: leetcode/二分查找/0074.搜索二维矩阵.md
     
     - 补充:
       - 二叉堆: leetcode/补充/二叉堆.md
@@ -86,3 +97,5 @@ nav:
     - 第三章: python/第三章 Python中的数据结构、模式匹配和算法理解.md
   - CS168:
     - Home: CS168/home.md
+  - SAR:
+    - glossary: SAR/glossary.md
