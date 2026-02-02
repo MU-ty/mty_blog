@@ -47,7 +47,7 @@ plugins:
 
 nav:
   - 首页: index.md  
-  - LeetCode 刷题:
+  - LeetCode:
     - 介绍: leetcode/index.md
     - 哈希:
       - 0001_两数之和: leetcode/哈希/0001.两数之和.md
@@ -91,25 +91,29 @@ nav:
       
     - 补充:
       - 二叉堆: leetcode/补充/二叉堆.md
+      - 优先队列: leetcode/补充/优先队列.md
+      - 树状数组: leetcode/补充/树状数组.md
+      - 线段树: leetcode/补充/线段树.md
+      - KMP算法: leetcode/补充/KMP算法.md
   
 
-  - Agent: Agent/index.md
-  - Backend: Backend/index.md
+  # - Agent: Agent/index.md
+  # - Backend: Backend/index.md
   - Deep Learning: 
     - Deep Learning/index.md
     - 第四章:
       - 总述: Deep Learning/第四章/index.md
       
-  - Frontend: Frontend/index.md
-  - Python:
-    - 第一章: python/第一章 python程序设计基础.md
-    - 第二章: python/第二章 面向对象程序设计.md
-    - 第三章: python/第三章 Python中的数据结构、模式匹配和算法理解.md
-  - CS168:
-    - Home: CS168/home.md
-  - SAR:
-    - glossary: SAR/glossary.md
-  - CS336:
-    - Home: CS336/home.md
+  # - Frontend: Frontend/index.md
+  # - Python:
+  #   - 第一章: python/第一章 python程序设计基础.md
+  #   - 第二章: python/第二章 面向对象程序设计.md
+  #   - 第三章: python/第三章 Python中的数据结构、模式匹配和算法理解.md
+  # - CS168:
+  #   - Home: CS168/home.md
+  # - SAR:
+  #   - glossary: SAR/glossary.md
+  # - CS336:
+  #   - Home: CS336/home.md
   - 更新日志: 
     - 更新日志: 更新日志/changelog.md
