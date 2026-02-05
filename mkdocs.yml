@@ -50,26 +50,31 @@ nav:
   - LeetCode:
     - 介绍: leetcode/index.md
     - 哈希:
-      - 0001_两数之和: leetcode/哈希/0001.两数之和.md
-      - 0049_字母异位词分组: leetcode/哈希/0049. 字母异位词分组.md
-      - 0128_最长连续序列: leetcode/哈希/0128. 最长连续序列.md
+      - 0001.两数之和: leetcode/哈希/0001.两数之和.md
+      - 0049.字母异位词分组: leetcode/哈希/0049. 字母异位词分组.md
+      - 0128.最长连续序列: leetcode/哈希/0128. 最长连续序列.md
     - 双指针:
-      - 0283_移动零: leetcode/双指针/0283. 移动零.md
-      - 0011_盛最多水的容器: leetcode/双指针/0011.盛最多水的容器.md
-      - 0015_三数之和: leetcode/双指针/0015.三数之和.md
-      - 0042_接雨水: leetcode/双指针/0042.接雨水.md
+      - 0283.移动零: leetcode/双指针/0283. 移动零.md
+      - 0011.盛最多水的容器: leetcode/双指针/0011.盛最多水的容器.md
+      - 0015.三数之和: leetcode/双指针/0015.三数之和.md
+      - 0042.接雨水: leetcode/双指针/0042.接雨水.md
+
+    - 滑动窗口:
+      - 1456.定长子串中元音的最大数目: leetcode/滑动窗口/1456. 定长子串中元音的最大数目.md
+      - 643.子数组最大平均数Ⅰ: leetcode/滑动窗口/643. 子数组最大平均数 I.md
+      - 1343.大小为K且平均值大于等于阈值的子数组数目: leetcode/滑动窗口/1343. 大小为 K 且平均值大于等于阈值的子数组数目.md
     - 链表:
-      - 0160_相交链表: leetcode/链表/0160. 相交链表.md
-      - 0206_反转链表: leetcode/链表/0206. 反转链表.md
-      - 0876_链表的中间结点: leetcode/链表/0876.链表的中间结点.md
-      - 0234_回文链表: leetcode/链表/0234.回文链表.md
-      - 0141_环形链表Ⅰ: leetcode/链表/0141.环形链表Ⅰ.md
-      - 0142_环形链表Ⅱ: leetcode/链表/0142. 环形链表 Ⅱ.md
-      - 0021_合并两个有序链表: leetcode/链表/0021.合并两个有序链表.md
-      - 0023_合并k个升序链表: leetcode/链表/0023.合并k个升序链表.md
-      - 0002_两数相加: leetcode/链表/0002.两数相加.md
-      - 0086_分隔链表: leetcode/链表/0086.分隔链表.md
-      - 0019_删除链表的倒数第N个节点: leetcode/链表/0019.删除链表的倒数第N个结点.md
+      - 0160.相交链表: leetcode/链表/0160. 相交链表.md
+      - 0206.反转链表: leetcode/链表/0206. 反转链表.md
+      - 0876.链表的中间结点: leetcode/链表/0876.链表的中间结点.md
+      - 0234.回文链表: leetcode/链表/0234.回文链表.md
+      - 0141.环形链表Ⅰ: leetcode/链表/0141.环形链表Ⅰ.md
+      - 0142.环形链表Ⅱ: leetcode/链表/0142. 环形链表 Ⅱ.md
+      - 0021.合并两个有序链表: leetcode/链表/0021.合并两个有序链表.md
+      - 0023.合并k个升序链表: leetcode/链表/0023.合并k个升序链表.md
+      - 0002.两数相加: leetcode/链表/0002.两数相加.md
+      - 0086.分隔链表: leetcode/链表/0086.分隔链表.md
+      - 0019.删除链表的倒数第N个节点: leetcode/链表/0019.删除链表的倒数第N个结点.md
 
     - 二叉树:
       - 引入: leetcode/二叉树/引入.md
@@ -101,9 +106,11 @@ nav:
   # - Backend: Backend/index.md
   - Deep Learning: 
     - Deep Learning/index.md
-    - 第四章:
-      - 总述: Deep Learning/第四章/index.md
-      
+    - 1.线性代数基础: Deep Learning/1.线性代数.md
+    - 2.概率统计基础: Deep Learning/2.概率统计.md
+    - 3.导数、反向传播、复杂度: Deep Learning/3.导数、反向传播、复杂度.md
+    - 4.线性方法、基础优化和 softmax 回归: Deep Learning/4.线性方法、基础优化和 softmax 回归.md
+    - 5.最大似然估计 和 逻辑回归: Deep Learning/5.最大似然估计与逻辑回归.md
   # - Frontend: Frontend/index.md
   # - Python:
   #   - 第一章: python/第一章 python程序设计基础.md
