@@ -111,6 +111,14 @@ nav:
     - 3.导数、反向传播、复杂度: Deep Learning/3.导数、反向传播、复杂度.md
     - 4.线性方法、基础优化和 softmax 回归: Deep Learning/4.线性方法、基础优化和 softmax 回归.md
     - 5.最大似然估计 和 逻辑回归: Deep Learning/5.最大似然估计与逻辑回归.md
+    - 6.多层感知机: Deep Learning/6.多层感知机.md
+    - 7.模型选择，欠拟合与过拟合，权重衰减 和 丢弃法: Deep Learning/7.模型选择，欠拟合与过拟合，权重衰减 和 丢弃法.md
+    - 阶段总结Ⅰ: Deep Learning/阶段总结Ⅰ.md
+    - 8.前向传播、反向传播、计算图: Deep Learning/8.前向传播、反向传播、计算图.md
+    - 9.数值稳定性、模型初始化: Deep Learning/9.数值稳定性、模型初始化.md
+    - 10.环境、分布偏移: Deep Learning/10.环境、分布偏移.md
+    - 11.深度学习计算: Deep Learning/11.深度学习计算.md
+    - 12.卷积神经网络: Deep Learning/12.卷积神经网络.md
   # - Frontend: Frontend/index.md
   # - Python:
   #   - 第一章: python/第一章 python程序设计基础.md
