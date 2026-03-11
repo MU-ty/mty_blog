@@ -120,6 +120,7 @@ nav:
     - 11.深度学习计算: Deep Learning/11.深度学习计算.md
     - 12.卷积神经网络: Deep Learning/12.卷积神经网络.md
     - 13.LeNet, AlexNet, VGG 和 NiN: Deep Learning/13.LeNet, AlexNet, VGG 和 NiN.md
+    - 14.GoogLeNet、批量规范化、ResNet、DenseNet: Deep Learning/14.GoogLeNet、批量规范化、ResNet、DenseNet.md
 
   # - Frontend: Frontend/index.md
   # - Python:
@@ -134,3 +135,7 @@ nav:
   #   - Home: CS336/home.md
   - 更新日志: 
     - 更新日志: 更新日志/changelog.md
+
+watch:
+  - docs/
+  - mkdocs.yml
