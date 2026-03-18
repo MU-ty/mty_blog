@@ -122,6 +122,7 @@ nav:
     - 13.LeNet, AlexNet, VGG 和 NiN: Deep Learning/13.LeNet, AlexNet, VGG 和 NiN.md
     - 14.GoogLeNet、批量规范化、ResNet、DenseNet: Deep Learning/14.GoogLeNet、批量规范化、ResNet、DenseNet.md
     - 15.序列模型: Deep Learning/15.序列模型.md
+    - 16. 注意力机制: Deep Learning/16.注意力机制.md
 
   # - Frontend: Frontend/index.md
   # - Python:
