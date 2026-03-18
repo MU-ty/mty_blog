@@ -1,0 +1,3344 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/leetcode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/%E5%BC%95%E5%85%A5/">
+      
+      
+        <link rel="prev" href="../../%E4%BA%8C%E5%8F%89%E6%A0%91/%E5%BC%95%E5%85%A5/">
+      
+      
+        <link rel="next" href="../0035.%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>引入 - MU-ty's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="MU-ty&#39;s Blog" class="md-header__button md-logo" aria-label="MU-ty's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MU-ty's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              引入
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  LeetCode
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Deep%20Learning/" class="md-tabs__link">
+          
+  
+  
+  Deep Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/changelog/" class="md-tabs__link">
+          
+  
+  
+  更新日志
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MU-ty&#39;s Blog" class="md-nav__button md-logo" aria-label="MU-ty's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MU-ty's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LeetCode
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LeetCode
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    哈希
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    哈希
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%93%88%E5%B8%8C/0001.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0001.两数之和
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%93%88%E5%B8%8C/0049.%20%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0049.字母异位词分组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%93%88%E5%B8%8C/0128.%20%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0128.最长连续序列
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    双指针
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    双指针
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8F%8C%E6%8C%87%E9%92%88/0283.%20%E7%A7%BB%E5%8A%A8%E9%9B%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0283.移动零
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8F%8C%E6%8C%87%E9%92%88/0011.%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0011.盛最多水的容器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8F%8C%E6%8C%87%E9%92%88/0015.%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0015.三数之和
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%8F%8C%E6%8C%87%E9%92%88/0042.%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0042.接雨水
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    滑动窗口
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    滑动窗口
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/1456.%20%E5%AE%9A%E9%95%BF%E5%AD%90%E4%B8%B2%E4%B8%AD%E5%85%83%E9%9F%B3%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1456.定长子串中元音的最大数目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/643.%20%E5%AD%90%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%B9%B3%E5%9D%87%E6%95%B0%20I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    643.子数组最大平均数Ⅰ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/1343.%20%E5%A4%A7%E5%B0%8F%E4%B8%BA%20K%20%E4%B8%94%E5%B9%B3%E5%9D%87%E5%80%BC%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E%E9%98%88%E5%80%BC%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1343.大小为K且平均值大于等于阈值的子数组数目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    链表
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    链表
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%93%BE%E8%A1%A8/0160.%20%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0160.相交链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%93%BE%E8%A1%A8/0206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0206.反转链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%93%BE%E8%A1%A8/0876.%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0876.链表的中间结点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%93%BE%E8%A1%A8/0234.%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0234.回文链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%93%BE%E8%A1%A8/0141.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8%E2%85%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0141.环形链表Ⅰ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%93%BE%E8%A1%A8/0142.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8%20%E2%85%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0142.环形链表Ⅱ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%93%BE%E8%A1%A8/0021.%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0021.合并两个有序链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%93%BE%E8%A1%A8/0023.%E5%90%88%E5%B9%B6k%E4%B8%AA%E5%8D%87%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0023.合并k个升序链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%93%BE%E8%A1%A8/0002.%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0002.两数相加
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%93%BE%E8%A1%A8/0086.%E5%88%86%E9%9A%94%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0086.分隔链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%93%BE%E8%A1%A8/0019.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0019.删除链表的倒数第N个节点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    二叉树
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    二叉树
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%BA%8C%E5%8F%89%E6%A0%91/%E5%BC%95%E5%85%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    二分查找
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    二分查找
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0035.%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0035_搜索插入位置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0074.%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0074_搜索二维矩阵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0034.%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0034_在排序数组中查找元素的第一个和最后一个位置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0033.%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0033_搜索旋转排序数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0153.%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0153_寻找旋转排序数组中的最小值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0004.%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0004_寻找两个正序数组的中位数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    栈
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    栈
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A0%88/0020.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0020_有效的括号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A0%88/0155.%E6%9C%80%E5%B0%8F%E6%A0%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0155_最小栈
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A0%88/Q1.%20%E7%94%A8%E6%A0%88%E6%93%8D%E4%BD%9C%E6%9E%84%E5%BB%BA%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q1. 用栈操作构建数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%A0%88/Q2.%20%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q2. 逆波兰表达式求值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    补充
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    补充
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%A1%A5%E5%85%85/%E4%BA%8C%E5%8F%89%E5%A0%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    二叉堆
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%A1%A5%E5%85%85/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    优先队列
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%A1%A5%E5%85%85/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树状数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%A1%A5%E5%85%85/%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线段树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%A1%A5%E5%85%85/KMP%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KMP算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deep Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/1.%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.线性代数基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/2.%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.概率统计基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/3.%E5%AF%BC%E6%95%B0%E3%80%81%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E3%80%81%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.导数、反向传播、复杂度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/4.%E7%BA%BF%E6%80%A7%E6%96%B9%E6%B3%95%E3%80%81%E5%9F%BA%E7%A1%80%E4%BC%98%E5%8C%96%E5%92%8C%20softmax%20%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.线性方法、基础优化和 softmax 回归
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/5.%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%E4%B8%8E%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.最大似然估计 和 逻辑回归
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/6.%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.多层感知机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/7.%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9%EF%BC%8C%E6%AC%A0%E6%8B%9F%E5%90%88%E4%B8%8E%E8%BF%87%E6%8B%9F%E5%90%88%EF%BC%8C%E6%9D%83%E9%87%8D%E8%A1%B0%E5%87%8F%20%E5%92%8C%20%E4%B8%A2%E5%BC%83%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.模型选择，欠拟合与过拟合，权重衰减 和 丢弃法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93%E2%85%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阶段总结Ⅰ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/8.%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD%E3%80%81%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E3%80%81%E8%AE%A1%E7%AE%97%E5%9B%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.前向传播、反向传播、计算图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/9.%E6%95%B0%E5%80%BC%E7%A8%B3%E5%AE%9A%E6%80%A7%E3%80%81%E6%A8%A1%E5%9E%8B%E5%88%9D%E5%A7%8B%E5%8C%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.数值稳定性、模型初始化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/10.%E7%8E%AF%E5%A2%83%E3%80%81%E5%88%86%E5%B8%83%E5%81%8F%E7%A7%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10.环境、分布偏移
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/11.%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11.深度学习计算
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/12.%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12.卷积神经网络
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/13.LeNet%2C%20AlexNet%2C%20VGG%20%E5%92%8C%20NiN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13.LeNet, AlexNet, VGG 和 NiN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/14.GoogLeNet%E3%80%81%E6%89%B9%E9%87%8F%E8%A7%84%E8%8C%83%E5%8C%96%E3%80%81ResNet%E3%80%81DenseNet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14.GoogLeNet、批量规范化、ResNet、DenseNet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/15.%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15.序列模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Deep%20Learning/16.%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. 注意力机制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    更新日志
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    首页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    LeetCode
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    二分查找
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>大家还知道怎么在一本很厚的词典查找一个单词吗？字典中的单词是按照“字典序”进行排序的，比如 code&lt;pan&lt;pancake 。如果我们要找一个单词，就要将字典从中间翻开，然后将这面单词跟想要找的单词比较。如果这面单词在需要寻找的单词之前，就将字典往后翻，否则就往前翻，直到找到准确的单词为止。
+大家可以发现，越接近需要查询的单词，翻动书面的页数就越少。你肯定不会从第一页开始一面一面翻，逐个查看每个单词是否就是自己想要查的单词，这样做就太慢了。虽然实际情况不是那么精确，但是基本上使用了“二分思想”。
+如果序列是有序的，就可以通过二分查找快速定位所需要的数据。除此之外，二分思想还能求出可行解的最值问题，比如想知道某款手机最高能多少楼高度摔下来而不会摔坏，使用二分的方式可以用最小实验次数就能得到结果（当然你需要准备好几个样品）。</p>
+<h1 id="_1">一、二分查找</h1>
+<h1 id="131">13.1 查找</h1>
+<h2 id="_2">题目描述</h2>
+<p>输入 <span class="arithmatex">\(n\)</span> 个不超过 <span class="arithmatex">\(10^9\)</span> 的单调不减的（就是后面的数字不小于前面的数字）非负整数 <span class="arithmatex">\(a_1,a_2,\dots,a_{n}\)</span>，然后进行 <span class="arithmatex">\(m\)</span> 次询问。对于每次询问，给出一个整数 <span class="arithmatex">\(q\)</span>，要求输出这个数字在序列中第一次出现的编号，如果没有找到的话输出 <span class="arithmatex">\(-1\)</span> 。</p>
+<h2 id="_3">输入格式</h2>
+<p>第一行 <span class="arithmatex">\(2\)</span> 个整数 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(m\)</span>，表示数字个数和询问次数。
+第二行 <span class="arithmatex">\(n\)</span> 个整数，表示这些待查询的数字。
+第三行 <span class="arithmatex">\(m\)</span> 个整数，表示询问这些数字的编号，从 <span class="arithmatex">\(1\)</span> 开始编号。</p>
+<h2 id="_4">输出格式</h2>
+<p>输出一行，<span class="arithmatex">\(m\)</span> 个整数，以空格隔开，表示答案。</p>
+<h2 id="1">样例 #1</h2>
+<h3 id="1_1">样例输入 #1</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>11 3
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1 3 3 3 5 7 9 11 13 15 15
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>1 3 6
+</span></code></pre></div>
+<h3 id="1_2">样例输出 #1</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>1 2 -1
+</span></code></pre></div>
+<h2 id="_5">提示</h2>
+<p>数据保证，<span class="arithmatex">\(1 \leq n \leq 10^6\)</span>，<span class="arithmatex">\(0 \leq a_i,q \leq 10^9\)</span>，<span class="arithmatex">\(1 \leq m \leq 10^5\)</span>
+本题输入输出量较大，请使用较快的 IO 方式。</p>
+<div class="language-cpp highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span style="color: #9C6500">#include</span><span style="color: #3D7B7B; font-style: italic">&lt;iostream&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span style="color: #9C6500">#define MAXN 1000010</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span style="color: #008000; font-weight: bold">using</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">namespace</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">std</span>;
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span>a[MAXN],<span style="color: #BBB"> </span>m,<span style="color: #BBB"> </span>n,<span style="color: #BBB"> </span>q;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">find</span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>x)<span style="color: #BBB"> </span>{
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span style="color: #BBB">    </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>l<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">1</span>,<span style="color: #BBB"> </span>r<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>n<span style="color: #666">+1</span>;
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">while</span><span style="color: #BBB"> </span>(l<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>r)<span style="color: #BBB"> </span>{
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span style="color: #BBB">        </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>mid<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>l<span style="color: #666">+</span>(r<span style="color: #666">-</span>l)<span style="color: #666">/2</span>;
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(a[mid]<span style="color: #BBB"> </span><span style="color: #666">&gt;=</span><span style="color: #BBB"> </span>x)<span style="color: #BBB">   </span>r<span style="color: #666">=</span>mid;
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">else</span><span style="color: #BBB"> </span>l<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(a[l]<span style="color: #BBB"> </span><span style="color: #666">==</span><span style="color: #BBB"> </span>x)<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>l;
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">else</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span><span style="color: #666">-1</span>;
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>}
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">main</span>()<span style="color: #BBB"> </span>{
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span style="color: #BBB">    </span>cin<span style="color: #BBB"> </span><span style="color: #666">&gt;&gt;</span>n<span style="color: #BBB"> </span><span style="color: #666">&gt;&gt;</span><span style="color: #BBB"> </span>m;
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span style="color: #BBB">        </span>cin<span style="color: #BBB"> </span><span style="color: #666">&gt;&gt;</span><span style="color: #BBB"> </span>a[i];
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>m;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span style="color: #BBB">        </span>cin<span style="color: #BBB"> </span><span style="color: #666">&gt;&gt;</span><span style="color: #BBB"> </span>q;
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span style="color: #BBB">        </span>cout<span style="color: #BBB"> </span><span style="color: #666">&lt;&lt;</span><span style="color: #BBB"> </span>find(q)<span style="color: #BBB"> </span><span style="color: #666">&lt;&lt;</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot; &quot;</span>;
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>}
+</span></code></pre></div>
+<h1 id="stllower_boundupper_bound-algorithm">补充知识：STL中的lower_bound()和upper_bound()   头文件：algorithm</h1>
+<p>lower_bound(begin,end,val):在值有序的数组连续地址[begin,end)中找到第一个位置并返回其地址，使得val插入在这个前面，整个数组仍然保持有序。
+upper_bound(begin,end,val):在值有序的数组连续地址[begin,end)中找到最后一个位置并返回其地址，使得val插入在这个前面，整个数组仍然保持有序。
+简易理解：比较 lower_bound() 和 upper_bound() 的区别
+lower_bound(value) 返回 第一个不小于 value 的元素（即 value 可能是返回的元素），它允许找到等于 value 的元素。
+upper_bound(value) 返回 第一个大于 value 的元素，它不允许找到等于 value 的元素。</p>
+<h1 id="132-a-b">13.2 A-B 数对</h1>
+<h2 id="_6">题目背景</h2>
+<p>出题是一件痛苦的事情！
+相同的题目看多了也会有审美疲劳，于是我舍弃了大家所熟悉的 A+B Problem，改用 A-B 了哈哈！</p>
+<h2 id="_7">题目描述</h2>
+<p>给出一串正整数数列以及一个正整数 <span class="arithmatex">\(C\)</span>，要求计算出所有满足 <span class="arithmatex">\(A - B = C\)</span> 的数对的个数（不同位置的数字一样的数对算不同的数对）。</p>
+<h2 id="_8">输入格式</h2>
+<p>输入共两行。
+第一行，两个正整数 <span class="arithmatex">\(N,C\)</span>。
+第二行，<span class="arithmatex">\(N\)</span> 个正整数，作为要求处理的那串数。</p>
+<h2 id="_9">输出格式</h2>
+<p>一行，表示该串正整数中包含的满足 <span class="arithmatex">\(A - B = C\)</span> 的数对的个数。</p>
+<h2 id="1_3">样例 #1</h2>
+<h3 id="1_4">样例输入 #1</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>4 1
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>1 1 2 3
+</span></code></pre></div>
+<h3 id="1_5">样例输出 #1</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>3
+</span></code></pre></div>
+<h2 id="_10">提示</h2>
+<p>对于 <span class="arithmatex">\(75\%\)</span> 的数据，<span class="arithmatex">\(1 \leq N \leq 2000\)</span>。
+对于 <span class="arithmatex">\(100\%\)</span> 的数据，<span class="arithmatex">\(1 \leq N \leq 2 \times 10^5\)</span>，<span class="arithmatex">\(0 \leq a_i &lt;2^{30}\)</span>，<span class="arithmatex">\(1 \leq C &lt; 2^{30}\)</span>。</p>
+<h1 id="on-log-n">法一、O(n log n)</h1>
+<div class="language-cpp highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span style="color: #9C6500">#include</span><span style="color: #3D7B7B; font-style: italic">&lt;cstdio&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span style="color: #9C6500">#include</span><span style="color: #3D7B7B; font-style: italic">&lt;algorithm&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span style="color: #9C6500">#define maxn 200010</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span style="color: #008000; font-weight: bold">using</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">namespace</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">std</span>;
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span style="color: #008000; font-weight: bold">typedef</span><span style="color: #BBB"> </span><span style="color: #B00040">long</span><span style="color: #BBB"> </span><span style="color: #B00040">long</span><span style="color: #BBB"> </span>LL;
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>LL<span style="color: #BBB"> </span>a[maxn];
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span>n,<span style="color: #BBB"> </span>c;
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">main</span>()<span style="color: #BBB"> </span>{
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span style="color: #BBB">    </span>scanf(<span style="color: #BA2121">&quot;%d%d&quot;</span>,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>n,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>c);
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span style="color: #BBB">        </span>scanf(<span style="color: #BA2121">&quot;%lld&quot;</span>,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>a[i]);
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span style="color: #BBB">    </span>sort(a,<span style="color: #BBB"> </span>a<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>n);
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span style="color: #BBB">    </span>LL<span style="color: #BBB"> </span>tot<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span style="color: #BBB">        </span>tot<span style="color: #BBB"> </span><span style="color: #666">+=</span><span style="color: #BBB"> </span>upper_bound(a,<span style="color: #BBB"> </span>a<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>n,<span style="color: #BBB"> </span>a[i]<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>c)<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span>lower_bound(a,<span style="color: #BBB"> </span>a<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>n,<span style="color: #BBB"> </span>a[i]<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>c);
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span style="color: #BBB">    </span>printf(<span style="color: #BA2121">&quot;%lld&quot;</span>,<span style="color: #BBB"> </span>tot);
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>}
+</span></code></pre></div>
+<h3 id="_11">解释：</h3>
+<p>给定条件是我们需要计算所有满足 <code class="language-text highlight">A - B = C</code> 的数对 <code class="language-text highlight">(A, B)</code>。根据这个条件，可以将问题转化为：
+- 对于每个元素 <code class="language-text highlight">A = a[i]</code>，我们需要查找 <code class="language-text highlight">B = a[j]</code>，使得 <code class="language-text highlight">a[i] - a[j] = C</code>，即 <code class="language-text highlight">a[j] = a[i] - C</code>。
+因此，我们的目标是在数组中找出所有满足 <code class="language-text highlight">a[j] = a[i] - C</code> 的元素。</p>
+<h3 id="lower_bound-upper_bound">使用 <code class="language-text highlight">lower_bound</code> 和 <code class="language-text highlight">upper_bound</code></h3>
+<ol>
+<li><strong><code class="language-text highlight">lower_bound</code> 和 <code class="language-text highlight">upper_bound</code> 定义</strong>：</li>
+<li><code class="language-text highlight">lower_bound(a, a + n, x)</code> 返回的是第一个大于等于 <code class="language-text highlight">x</code> 的元素的位置。</li>
+<li><code class="language-text highlight">upper_bound(a, a + n, x)</code> 返回的是第一个大于 <code class="language-text highlight">x</code> 的元素的位置。</li>
+<li><strong>对于每个 <code class="language-text highlight">a[i]</code>，我们需要寻找 <code class="language-text highlight">a[j] = a[i] - c</code> 的位置</strong>。为了查找这个值在数组中的出现位置，我们可以使用 <code class="language-text highlight">lower_bound</code> 和 <code class="language-text highlight">upper_bound</code> 来查找这个值的区间。</li>
+</ol>
+<h3 id="upper_bound-lower_bound"><code class="language-text highlight">upper_bound</code> 和 <code class="language-text highlight">lower_bound</code> 的差值</h3>
+<p>假设我们要找的值是 <code class="language-text highlight">a[i] - c</code>（即 <code class="language-text highlight">B = a[i] - C</code>）：
+- <strong><code class="language-text highlight">lower_bound(a, a + n, a[i] - c)</code></strong> 返回的是数组中第一个大于等于 <code class="language-text highlight">a[i] - c</code> 的位置。
+- <strong><code class="language-text highlight">upper_bound(a, a + n, a[i] - c)</code></strong> 返回的是数组中第一个大于 <code class="language-text highlight">a[i] - c</code> 的位置。
+对于满足 <code class="language-text highlight">a[j] = a[i] - C</code> 的所有 <code class="language-text highlight">j</code>，它们的位置就落在 <code class="language-text highlight">lower_bound</code> 和 <code class="language-text highlight">upper_bound</code> 之间。因此，<code class="language-text highlight">upper_bound - lower_bound</code> 的差值给出的是这个值出现的次数。</p>
+<h3 id="_12">示例</h3>
+<p>假设我们有一个数组 <code class="language-text highlight">a = [1, 1, 2, 3]</code>，并且我们想查找满足 <code class="language-text highlight">a[i] - a[j] = 1</code> 的数对。
+- 设 <code class="language-text highlight">c = 1</code>，即我们需要找 <code class="language-text highlight">a[j] = a[i] - 1</code>。
+- 对于每个 <code class="language-text highlight">a[i]</code>，我们会进行以下查询：
+  - 对于 <code class="language-text highlight">a[0] = 1</code>，我们需要查找 <code class="language-text highlight">a[j] = 0</code>。由于 <code class="language-text highlight">0</code> 不在数组中，<code class="language-text highlight">lower_bound(a, a + n, 0)</code> 和 <code class="language-text highlight">upper_bound(a, a + n, 0)</code> 都会返回指向第一个元素的迭代器，差值为 <code class="language-text highlight">0</code>。
+  - 对于 <code class="language-text highlight">a[1] = 1</code>，同样，<code class="language-text highlight">a[j] = 0</code>，<code class="language-text highlight">upper_bound - lower_bound = 0</code>。
+  - 对于 <code class="language-text highlight">a[2] = 2</code>，我们需要查找 <code class="language-text highlight">a[j] = 1</code>，它在数组中的位置是两个 <code class="language-text highlight">1</code>，所以 <code class="language-text highlight">upper_bound - lower_bound = 2</code>。
+  - 对于 <code class="language-text highlight">a[3] = 3</code>，我们需要查找 <code class="language-text highlight">a[j] = 2</code>，它在数组中的位置是 <code class="language-text highlight">2</code>，所以 <code class="language-text highlight">upper_bound - lower_bound = 1</code>。</p>
+<h3 id="_13">修正代码的部分：</h3>
+<p><div class="language-cpp highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>LL<span style="color: #BBB"> </span>tot<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span style="color: #BBB">    </span>tot<span style="color: #BBB"> </span><span style="color: #666">+=</span><span style="color: #BBB"> </span>upper_bound(a,<span style="color: #BBB"> </span>a<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>n,<span style="color: #BBB"> </span>a[i]<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span>c)<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span>lower_bound(a,<span style="color: #BBB"> </span>a<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>n,<span style="color: #BBB"> </span>a[i]<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span>c);
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>}
+</span></code></pre></div>
+- 对于每个 <code class="language-text highlight">a[i]</code>，<code class="language-text highlight">upper_bound(a, a + n, a[i] - c)</code> 查找 <code class="language-text highlight">a[j] = a[i] - c</code> 在数组中的第一个大于该值的位置。
+- <code class="language-text highlight">lower_bound(a, a + n, a[i] - c)</code> 查找第一个大于等于 <code class="language-text highlight">a[i] - c</code> 的位置。
+这两个值的差值即为 <code class="language-text highlight">a[i] - c</code> 这个值在数组中出现的次数。</p>
+<h3 id="_14">时间复杂度</h3>
+<ul>
+<li><code class="language-text highlight">lower_bound</code> 和 <code class="language-text highlight">upper_bound</code> 都是二分查找，时间复杂度是 <code class="language-text highlight">O(log n)</code>。</li>
+<li>所以对于每个元素 <code class="language-text highlight">a[i]</code>，我们进行一次 <code class="language-text highlight">upper_bound</code> 和一次 <code class="language-text highlight">lower_bound</code>，总的时间复杂度是 <code class="language-text highlight">O(n log n)</code>。</li>
+</ul>
+<h3 id="_15">总结</h3>
+<ul>
+<li><code class="language-text highlight">upper_bound</code> 和 <code class="language-text highlight">lower_bound</code> 用于查找指定元素的位置区间，通过这两个函数的差值可以高效地计算满足条件的数对个数。</li>
+<li>时间复杂度为 <code class="language-text highlight">O(n log n)</code>，非常适合处理大数据量的情况。</li>
+</ul>
+<h1 id="on">法二、O(n)</h1>
+<div class="language-cpp highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span style="color: #9C6500">#include</span><span style="color: #3D7B7B; font-style: italic">&lt;cstdio&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span style="color: #9C6500">#include</span><span style="color: #3D7B7B; font-style: italic">&lt;algorithm&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span style="color: #9C6500">#define maxn 200010</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span style="color: #008000; font-weight: bold">using</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">namespace</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">std</span>;
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span style="color: #008000; font-weight: bold">typedef</span><span style="color: #BBB"> </span><span style="color: #B00040">long</span><span style="color: #BBB"> </span><span style="color: #B00040">long</span><span style="color: #BBB"> </span>LL;
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>LL<span style="color: #BBB"> </span>a[maxn];
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span>n,<span style="color: #BBB"> </span>c;
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">main</span>()<span style="color: #BBB"> </span>{
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span style="color: #BBB">    </span>scanf(<span style="color: #BA2121">&quot;%d%d&quot;</span>,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>n,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>c);
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span style="color: #BBB">        </span>scanf(<span style="color: #BA2121">&quot;%lld&quot;</span>,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>a[i]);
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span style="color: #BBB">    </span>sort(a,<span style="color: #BBB"> </span>a<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>n);
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span style="color: #BBB">    </span>LL<span style="color: #BBB"> </span>tot<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>,<span style="color: #BBB"> </span>L<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>,<span style="color: #BBB"> </span>R<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">while</span><span style="color: #BBB"> </span>(L<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>n<span style="color: #BBB"> </span><span style="color: #666">&amp;&amp;</span><span style="color: #BBB"> </span>a[L]<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>a[i]<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>c)<span style="color: #BBB"> </span>{
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span style="color: #BBB">            </span>L<span style="color: #666">++</span>;
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span style="color: #BBB">        </span>}
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">while</span><span style="color: #BBB"> </span>(R<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>n<span style="color: #BBB"> </span><span style="color: #666">&amp;&amp;</span><span style="color: #BBB"> </span>a[R]<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span>a[i]<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>c)<span style="color: #BBB"> </span>{
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span style="color: #BBB">            </span>R<span style="color: #666">++</span>;
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span style="color: #BBB">        </span>}
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span style="color: #BBB">        </span>tot<span style="color: #BBB"> </span><span style="color: #666">+=</span><span style="color: #BBB"> </span>R<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span>L;
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span style="color: #BBB">    </span>printf(<span style="color: #BA2121">&quot;%lld&quot;</span>,<span style="color: #BBB"> </span>tot);
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>}
+</span></code></pre></div>
+<h1 id="_16">二、二分答案</h1>
+<h1 id="133-eko">13.3 EKO / 砍树</h1>
+<h2 id="_17">题目描述</h2>
+<p>伐木工人 Mirko 需要砍 <span class="arithmatex">\(M\)</span> 米长的木材。对 Mirko 来说这是很简单的工作，因为他有一个漂亮的新伐木机，可以如野火一般砍伐森林。不过，Mirko 只被允许砍伐一排树。
+Mirko 的伐木机工作流程如下：Mirko 设置一个高度参数 <span class="arithmatex">\(H\)</span>（米），伐木机升起一个巨大的锯片到高度 <span class="arithmatex">\(H\)</span>，并锯掉所有树比 <span class="arithmatex">\(H\)</span> 高的部分（当然，树木不高于 <span class="arithmatex">\(H\)</span> 米的部分保持不变）。Mirko 就得到树木被锯下的部分。例如，如果一排树的高度分别为 <span class="arithmatex">\(20,15,10\)</span> 和 <span class="arithmatex">\(17\)</span>，Mirko 把锯片升到 <span class="arithmatex">\(15\)</span> 米的高度，切割后树木剩下的高度将是 <span class="arithmatex">\(15,15,10\)</span> 和 <span class="arithmatex">\(15\)</span>，而 Mirko 将从第 <span class="arithmatex">\(1\)</span> 棵树得到 <span class="arithmatex">\(5\)</span> 米，从第 <span class="arithmatex">\(4\)</span> 棵树得到 <span class="arithmatex">\(2\)</span> 米，共得到 <span class="arithmatex">\(7\)</span> 米木材。
+Mirko 非常关注生态保护，所以他不会砍掉过多的木材。这也是他尽可能高地设定伐木机锯片的原因。请帮助 Mirko 找到伐木机锯片的最大的整数高度 <span class="arithmatex">\(H\)</span>，使得他能得到的木材至少为 <span class="arithmatex">\(M\)</span> 米。换句话说，如果再升高 <span class="arithmatex">\(1\)</span> 米，他将得不到 <span class="arithmatex">\(M\)</span> 米木材。</p>
+<h2 id="_18">输入格式</h2>
+<p>第 <span class="arithmatex">\(1\)</span> 行 <span class="arithmatex">\(2\)</span> 个整数 <span class="arithmatex">\(N\)</span> 和 <span class="arithmatex">\(M\)</span>，<span class="arithmatex">\(N\)</span> 表示树木的数量，<span class="arithmatex">\(M\)</span> 表示需要的木材总长度。
+第 <span class="arithmatex">\(2\)</span> 行 <span class="arithmatex">\(N\)</span> 个整数表示每棵树的高度。</p>
+<h2 id="_19">输出格式</h2>
+<p><span class="arithmatex">\(1\)</span> 个整数，表示锯片的最高高度。</p>
+<h2 id="1_6">样例 #1</h2>
+<h3 id="1_7">样例输入 #1</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>4 7
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>20 15 10 17
+</span></code></pre></div>
+<h3 id="1_8">样例输出 #1</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>15
+</span></code></pre></div>
+<h2 id="2">样例 #2</h2>
+<h3 id="2_1">样例输入 #2</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>5 20
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>4 42 40 26 46
+</span></code></pre></div>
+<h3 id="2_2">样例输出 #2</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>36
+</span></code></pre></div>
+<h2 id="_20">提示</h2>
+<p>对于 <span class="arithmatex">\(100\%\)</span> 的测试数据，<span class="arithmatex">\(1\le N\le10^6\)</span>，<span class="arithmatex">\(1\le M\le2\times10^9\)</span>，树的高度 <span class="arithmatex">\(\le 4\times 10^5\)</span>，所有树的高度总和 <span class="arithmatex">\(&gt;M\)</span>。</p>
+<div class="language-cpp highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span style="color: #9C6500">#include</span><span style="color: #3D7B7B; font-style: italic">&lt;cstdio&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span style="color: #008000; font-weight: bold">using</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">namespace</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">std</span>;
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span style="color: #9C6500">#define maxn 1000010</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span style="color: #008000; font-weight: bold">typedef</span><span style="color: #BBB"> </span><span style="color: #B00040">long</span><span style="color: #BBB"> </span><span style="color: #B00040">long</span><span style="color: #BBB"> </span>LL;
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>LL<span style="color: #BBB"> </span>a[maxn],<span style="color: #BBB"> </span>n,<span style="color: #BBB"> </span>m;
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span style="color: #B00040">bool</span><span style="color: #BBB"> </span><span style="color: #00F">P</span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>h)<span style="color: #BBB"> </span>{
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span style="color: #BBB">    </span>LL<span style="color: #BBB"> </span>tot<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>;
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(a[i]<span style="color: #BBB"> </span><span style="color: #666">&gt;</span><span style="color: #BBB"> </span>h)<span style="color: #BBB">  </span>tot<span style="color: #BBB"> </span><span style="color: #666">+=</span><span style="color: #BBB"> </span>a[i]<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span>h;
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>tot<span style="color: #BBB"> </span><span style="color: #666">&gt;=</span><span style="color: #BBB"> </span>m;
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>}
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">main</span>()<span style="color: #BBB"> </span>{
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span style="color: #BBB">    </span>scanf(<span style="color: #BA2121">&quot;%lld%lld&quot;</span>,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>n,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>m);
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span style="color: #BBB">        </span>scanf(<span style="color: #BA2121">&quot;%lld&quot;</span>,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>a[i]);
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span style="color: #BBB">    </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>L<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>,<span style="color: #BBB"> </span>R<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">1e9</span>,<span style="color: #BBB"> </span>ans,<span style="color: #BBB"> </span>mid;
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">while</span><span style="color: #BBB"> </span>(L<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span>R)<span style="color: #BBB"> </span>{
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(P(mid<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>L<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>R<span style="color: #BBB"> </span><span style="color: #666">&gt;&gt;</span><span style="color: #BBB"> </span><span style="color: #666">1</span>))
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span style="color: #BBB">            </span>ans<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid,<span style="color: #BBB"> </span>L<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">else</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span style="color: #BBB">            </span>R<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span style="color: #BBB">    </span>printf(<span style="color: #BA2121">&quot;%d&quot;</span>,<span style="color: #BBB"> </span>ans);
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>}
+</span></code></pre></div>
+<h1 id="134">13.4 进击的奶牛</h1>
+<h2 id="_21">题目描述</h2>
+<p>Farmer John 建造了一个有 <span class="arithmatex">\(N\)</span>（<span class="arithmatex">\(2 \leq N \leq 10 ^ 5\)</span>) 个隔间的牛棚，这些隔间分布在一条直线上，坐标是 <span class="arithmatex">\(x _ 1, x _ 2, \cdots, x _ N\)</span>（<span class="arithmatex">\(0 \leq x _ i \leq 10 ^ 9\)</span>）。
+他的 <span class="arithmatex">\(C\)</span>（<span class="arithmatex">\(2 \leq C \leq N\)</span>）头牛不满于隔间的位置分布，它们为牛棚里其他的牛的存在而愤怒。为了防止牛之间的互相打斗，Farmer John 想把这些牛安置在指定的隔间，所有牛中相邻两头的最近距离越大越好。那么，这个最大的最近距离是多少呢？</p>
+<h2 id="_22">输入格式</h2>
+<p>第 <span class="arithmatex">\(1\)</span> 行：两个用空格隔开的数字 <span class="arithmatex">\(N\)</span> 和 <span class="arithmatex">\(C\)</span>。
+第 <span class="arithmatex">\(2 \sim N+1\)</span> 行：每行一个整数，表示每个隔间的坐标。</p>
+<h2 id="_23">输出格式</h2>
+<p>输出只有一行，即相邻两头牛最大的最近距离。</p>
+<h2 id="1_9">样例 #1</h2>
+<h3 id="1_10">样例输入 #1</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>5 3
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>1
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>2
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>8
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>4
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>9
+</span></code></pre></div>
+<h3 id="1_11">样例输出 #1</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>3
+</span></code></pre></div>
+<h2 id="_24">标答</h2>
+<div class="language-cpp highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span style="color: #9C6500">#include</span><span style="color: #3D7B7B; font-style: italic">&lt;cstdio&gt;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span style="color: #9C6500">#include</span><span style="color: #3D7B7B; font-style: italic">&lt;algorithm&gt;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span style="color: #008000; font-weight: bold">using</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">namespace</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">std</span>;
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span style="color: #9C6500">#define maxn 1000010</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span style="color: #9C6500">#define INF 1e9</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span>a[maxn],<span style="color: #BBB"> </span>n,<span style="color: #BBB"> </span>c;
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span style="color: #B00040">bool</span><span style="color: #BBB"> </span><span style="color: #00F">P</span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>d)<span style="color: #BBB"> </span>{
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span style="color: #BBB">    </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>k<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>,<span style="color: #BBB"> </span>last<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">-</span>INF;
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(a[i]<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span>last<span style="color: #BBB"> </span><span style="color: #666">&gt;=</span><span style="color: #BBB"> </span>d)
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span style="color: #BBB">            </span>last<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>a[i],<span style="color: #BBB"> </span>k<span style="color: #666">++</span>;
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>k<span style="color: #BBB"> </span><span style="color: #666">&gt;=</span><span style="color: #BBB"> </span>c;
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>}
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">main</span>()<span style="color: #BBB"> </span>{
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span style="color: #BBB">    </span>scanf(<span style="color: #BA2121">&quot;%d%d&quot;</span>,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>n,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>c);
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span style="color: #BBB">        </span>scanf(<span style="color: #BA2121">&quot;%d&quot;</span>,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>a[i]);
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span style="color: #BBB">    </span>sort(a<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span><span style="color: #666">1</span>,<span style="color: #BBB"> </span>a<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span><span style="color: #666">1</span><span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>n);
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span style="color: #BBB">    </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>L<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>,<span style="color: #BBB"> </span>R<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>INF,<span style="color: #BBB"> </span>ans,<span style="color: #BBB"> </span>mid;
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">while</span><span style="color: #BBB"> </span>(L<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span>R)<span style="color: #BBB"> </span>{
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(P(mid<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>L<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>R<span style="color: #BBB"> </span><span style="color: #666">&gt;&gt;</span><span style="color: #BBB"> </span><span style="color: #666">1</span>))
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span style="color: #BBB">            </span>ans<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid,<span style="color: #BBB"> </span>L<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">else</span>
+</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span style="color: #BBB">            </span>R<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;
+</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span style="color: #BBB">    </span>printf(<span style="color: #BA2121">&quot;%d&quot;</span>,<span style="color: #BBB"> </span>ans);
+</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>}
+</span></code></pre></div>
+<h2 id="_25">较好的理解方式</h2>
+<div class="language-cpp highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span style="color: #9C6500">#include</span><span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">&lt;cstdio&gt;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span style="color: #9C6500">#include</span><span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">&lt;algorithm&gt;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span style="color: #008000; font-weight: bold">using</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">namespace</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">std</span>;
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span style="color: #9C6500">#define maxn 1000010</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span>a[maxn],<span style="color: #BBB"> </span>n,<span style="color: #BBB"> </span>c;
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span style="color: #3D7B7B; font-style: italic">// 判断是否可以用最小距离d放置所有的牛</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span style="color: #B00040">bool</span><span style="color: #BBB"> </span><span style="color: #00F">P</span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>d)<span style="color: #BBB"> </span>{
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span style="color: #BBB">    </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>k<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">1</span>,<span style="color: #BBB"> </span>last<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>a[<span style="color: #666">1</span>];<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// 放置第一头牛在最左边</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">2</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(a[i]<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span>last<span style="color: #BBB"> </span><span style="color: #666">&gt;=</span><span style="color: #BBB"> </span>d)<span style="color: #BBB"> </span>{<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// 如果当前隔间与上一个放置的牛的距离大于等于d</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span style="color: #BBB">            </span>last<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>a[i];<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// 放置这头牛</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span style="color: #BBB">            </span>k<span style="color: #666">++</span>;<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// 牛的数量增加</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span style="color: #BBB">            </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(k<span style="color: #BBB"> </span><span style="color: #666">==</span><span style="color: #BBB"> </span>c)<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span><span style="color: #008000">true</span>;<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// 如果所有牛都被放置成功</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span style="color: #BBB">        </span>}
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span><span style="color: #008000">false</span>;<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// 如果不能放置所有的牛</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>}
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">main</span>()<span style="color: #BBB"> </span>{
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span style="color: #BBB">    </span><span style="color: #3D7B7B; font-style: italic">// 读取输入</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span style="color: #BBB">    </span>scanf(<span style="color: #BA2121">&quot;%d%d&quot;</span>,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>n,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>c);
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span>n;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span style="color: #BBB">        </span>scanf(<span style="color: #BA2121">&quot;%d&quot;</span>,<span style="color: #BBB"> </span><span style="color: #666">&amp;</span>a[i]);
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>
+</span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span style="color: #BBB">    </span><span style="color: #3D7B7B; font-style: italic">// 排序隔间的位置</span>
+</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span style="color: #BBB">    </span>sort(a<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span><span style="color: #666">1</span>,<span style="color: #BBB"> </span>a<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span><span style="color: #666">1</span><span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>n);
+</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>
+</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span style="color: #BBB">    </span><span style="color: #3D7B7B; font-style: italic">// 二分查找最大最小距离</span>
+</span><span id="__span-16-31"><a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span style="color: #BBB">    </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>L<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">0</span>,<span style="color: #BBB"> </span>R<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>a[n]<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span>a[<span style="color: #666">1</span>],<span style="color: #BBB"> </span>ans;
+</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">while</span><span style="color: #BBB"> </span>(L<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span>R)<span style="color: #BBB"> </span>{
+</span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a><span style="color: #BBB">        </span><span style="color: #B00040">int</span><span style="color: #BBB"> </span>mid<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>(L<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>R)<span style="color: #BBB"> </span><span style="color: #666">&gt;&gt;</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// 中间值</span>
+</span><span id="__span-16-34"><a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(P(mid))<span style="color: #BBB"> </span>{<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// 如果可以放置所有牛</span>
+</span><span id="__span-16-35"><a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span style="color: #BBB">            </span>ans<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid;<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// 更新答案</span>
+</span><span id="__span-16-36"><a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span style="color: #BBB">            </span>L<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// 尝试更大的最小距离</span>
+</span><span id="__span-16-37"><a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span style="color: #BBB">        </span>}<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">else</span><span style="color: #BBB"> </span>{
+</span><span id="__span-16-38"><a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a><span style="color: #BBB">            </span>R<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span><span style="color: #666">1</span>;<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// 尝试更小的最小距离</span>
+</span><span id="__span-16-39"><a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a><span style="color: #BBB">        </span>}
+</span><span id="__span-16-40"><a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-16-41"><a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a>
+</span><span id="__span-16-42"><a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a><span style="color: #BBB">    </span><span style="color: #3D7B7B; font-style: italic">// 输出结果</span>
+</span><span id="__span-16-43"><a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a><span style="color: #BBB">    </span>printf(<span style="color: #BA2121">&quot;%d</span><span style="color: #AA5D1F; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>,<span style="color: #BBB"> </span>ans);
+</span><span id="__span-16-44"><a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a>}
+</span></code></pre></div>
+<h2 id="pd">解释：从头清晰地解释整个过程，特别是关于 <strong>判断函数 <code class="language-text highlight">P(d)</code></strong> 的执行逻辑。（以样例为例）</h2>
+<hr />
+<h3 id="_26"><strong>题目简述</strong></h3>
+<p>我们需要在牛棚的位置 <code class="language-text highlight">a = [1, 2, 8, 4, 9]</code> 中放置 <code class="language-text highlight">3</code> 头牛（<code class="language-text highlight">C = 3</code>），让所有相邻两头牛的最小距离尽可能大。</p>
+<h3 id="_27"><strong>二分查找的核心</strong></h3>
+<ul>
+<li>最小距离 <code class="language-text highlight">d</code> 的范围：从 <code class="language-text highlight">L = 0</code> 到 <code class="language-text highlight">R = 最大坐标差 = 9 - 1 = 8</code>。</li>
+<li>我们通过 <strong>二分查找</strong>找到最大的可行距离 <code class="language-text highlight">d</code>。</li>
+</ul>
+<hr />
+<h3 id="pd_1"><strong>判断函数 <code class="language-text highlight">P(d)</code></strong></h3>
+<p>函数 <code class="language-text highlight">P(d)</code> 检查是否可以在所有牛棚中，以最小间距 <code class="language-text highlight">d</code> 成功放置 <code class="language-text highlight">C</code> 头牛。
+- <strong>输入：</strong> 一个最小距离 <code class="language-text highlight">d</code>。
+- <strong>输出：</strong> <code class="language-text highlight">true</code>（可以放置）或 <code class="language-text highlight">false</code>（无法放置）。
+- <strong>逻辑：</strong>
+  1. 按顺序检查牛棚位置，放置第 1 头牛。
+  2. 从当前位置往后，找到满足距离 <code class="language-text highlight">&gt;= d</code> 的位置放置下一头牛，直到放置完所有 <code class="language-text highlight">C</code> 头牛。
+  3. 如果成功放置 <code class="language-text highlight">C</code> 头牛，返回 <code class="language-text highlight">true</code>；否则返回 <code class="language-text highlight">false</code>。</p>
+<hr />
+<h3 id="_28"><strong>完整过程</strong></h3>
+<h4 id="_29"><strong>输入数据</strong></h4>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>N = 5, C = 3
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>牛棚位置：a = [1, 2, 8, 4, 9]
+</span></code></pre></div>
+<h4 id="_30"><strong>排序</strong></h4>
+<p>先对位置排序：
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>a = [1, 2, 4, 8, 9]
+</span></code></pre></div></p>
+<h4 id="_31"><strong>初始化二分范围</strong></h4>
+<ul>
+<li><code class="language-text highlight">L = 0</code>（最小可能距离）。</li>
+<li><code class="language-text highlight">R = 8</code>（最大可能距离）。</li>
+<li><code class="language-text highlight">ans = 0</code>（记录答案）。</li>
+</ul>
+<hr />
+<h3 id="_32"><strong>二分查找过程</strong></h3>
+<h4 id="_33"><strong>第一次迭代</strong></h4>
+<ul>
+<li><strong>计算中间值</strong>：<code class="language-text highlight">mid = (L + R) &gt;&gt; 1 = (0 + 8) &gt;&gt; 1 = 4</code>。</li>
+<li><strong>检查 <code class="language-text highlight">P(4)</code>：</strong></li>
+<li><strong>放置第 1 头牛</strong>在位置 <code class="language-text highlight">a[0] = 1</code>。<ul>
+<li>当前最后一头牛的位置：<code class="language-text highlight">last = 1</code>。</li>
+</ul>
+</li>
+<li><strong>寻找放置第 2 头牛的位置</strong>：<ul>
+<li>从 <code class="language-text highlight">a[1] = 2</code> 开始：</li>
+<li><code class="language-text highlight">2 - 1 = 1</code>，不满足。</li>
+<li><code class="language-text highlight">4 - 1 = 3</code>，不满足。</li>
+<li><code class="language-text highlight">8 - 1 = 7</code>，满足，放置在 <code class="language-text highlight">a[3] = 8</code>。</li>
+<li>当前最后一头牛的位置：<code class="language-text highlight">last = 8</code>。</li>
+</ul>
+</li>
+<li><strong>寻找放置第 3 头牛的位置</strong>：<ul>
+<li>从 <code class="language-text highlight">a[4] = 9</code> 开始：</li>
+<li><code class="language-text highlight">9 - 8 = 1</code>，不满足。</li>
+<li>无法放置第 3 头牛。</li>
+</ul>
+</li>
+<li><strong>结果：</strong> <code class="language-text highlight">P(4) = false</code>。</li>
+<li><strong>更新搜索范围</strong>：<code class="language-text highlight">R = mid - 1 = 3</code>。</li>
+</ul>
+<hr />
+<h4 id="_34"><strong>第二次迭代</strong></h4>
+<ul>
+<li><strong>计算中间值</strong>：<code class="language-text highlight">mid = (L + R) &gt;&gt; 1 = (0 + 3) &gt;&gt; 1 = 1</code>。</li>
+<li><strong>检查 <code class="language-text highlight">P(1)</code>：</strong></li>
+<li><strong>放置第 1 头牛</strong>在位置 <code class="language-text highlight">a[0] = 1</code>。<ul>
+<li>当前最后一头牛的位置：<code class="language-text highlight">last = 1</code>。</li>
+</ul>
+</li>
+<li><strong>寻找放置第 2 头牛的位置</strong>：<ul>
+<li>从 <code class="language-text highlight">a[1] = 2</code> 开始：</li>
+<li><code class="language-text highlight">2 - 1 = 1</code>，满足，放置在 <code class="language-text highlight">a[1] = 2</code>。</li>
+<li>当前最后一头牛的位置：<code class="language-text highlight">last = 2</code>。</li>
+</ul>
+</li>
+<li><strong>寻找放置第 3 头牛的位置</strong>：<ul>
+<li>从 <code class="language-text highlight">a[2] = 4</code> 开始：</li>
+<li><code class="language-text highlight">4 - 2 = 2</code>，满足，放置在 <code class="language-text highlight">a[2] = 4</code>。</li>
+<li>成功放置 3 头牛。</li>
+</ul>
+</li>
+<li><strong>结果：</strong> <code class="language-text highlight">P(1) = true</code>。</li>
+<li><strong>更新搜索范围</strong>：<code class="language-text highlight">L = mid + 1 = 2</code>，并记录答案：<code class="language-text highlight">ans = 1</code>。</li>
+</ul>
+<hr />
+<h4 id="_35"><strong>第三次迭代</strong></h4>
+<ul>
+<li><strong>计算中间值</strong>：<code class="language-text highlight">mid = (L + R) &gt;&gt; 1 = (2 + 3) &gt;&gt; 1 = 2</code>。</li>
+<li><strong>检查 <code class="language-text highlight">P(2)</code>：</strong></li>
+<li><strong>放置第 1 头牛</strong>在位置 <code class="language-text highlight">a[0] = 1</code>。<ul>
+<li>当前最后一头牛的位置：<code class="language-text highlight">last = 1</code>。</li>
+</ul>
+</li>
+<li><strong>寻找放置第 2 头牛的位置</strong>：<ul>
+<li>从 <code class="language-text highlight">a[1] = 2</code> 开始：</li>
+<li><code class="language-text highlight">2 - 1 = 1</code>，不满足。</li>
+<li><code class="language-text highlight">4 - 1 = 3</code>，满足，放置在 <code class="language-text highlight">a[2] = 4</code>。</li>
+<li>当前最后一头牛的位置：<code class="language-text highlight">last = 4</code>。</li>
+</ul>
+</li>
+<li><strong>寻找放置第 3 头牛的位置</strong>：<ul>
+<li>从 <code class="language-text highlight">a[3] = 8</code> 开始：</li>
+<li><code class="language-text highlight">8 - 4 = 4</code>，满足，放置在 <code class="language-text highlight">a[3] = 8</code>。</li>
+<li>成功放置 3 头牛。</li>
+</ul>
+</li>
+<li><strong>结果：</strong> <code class="language-text highlight">P(2) = true</code>。</li>
+<li><strong>更新搜索范围</strong>：<code class="language-text highlight">L = mid + 1 = 3</code>，并记录答案：<code class="language-text highlight">ans = 2</code>。</li>
+</ul>
+<hr />
+<h4 id="_36"><strong>第四次迭代</strong></h4>
+<ul>
+<li><strong>计算中间值</strong>：<code class="language-text highlight">mid = (L + R) &gt;&gt; 1 = (3 + 3) &gt;&gt; 1 = 3</code>。</li>
+<li><strong>检查 <code class="language-text highlight">P(3)</code>：</strong></li>
+<li><strong>放置第 1 头牛</strong>在位置 <code class="language-text highlight">a[0] = 1</code>。<ul>
+<li>当前最后一头牛的位置：<code class="language-text highlight">last = 1</code>。</li>
+</ul>
+</li>
+<li><strong>寻找放置第 2 头牛的位置</strong>：<ul>
+<li>从 <code class="language-text highlight">a[1] = 2</code> 开始：</li>
+<li><code class="language-text highlight">2 - 1 = 1</code>，不满足。</li>
+<li><code class="language-text highlight">4 - 1 = 3</code>，满足，放置在 <code class="language-text highlight">a[2] = 4</code>。</li>
+<li>当前最后一头牛的位置：<code class="language-text highlight">last = 4</code>。</li>
+</ul>
+</li>
+<li><strong>寻找放置第 3 头牛的位置</strong>：<ul>
+<li>从 <code class="language-text highlight">a[3] = 8</code> 开始：</li>
+<li><code class="language-text highlight">8 - 4 = 4</code>，满足，放置在 <code class="language-text highlight">a[3] = 8</code>。</li>
+<li>成功放置 3 头牛。</li>
+</ul>
+</li>
+<li><strong>结果：</strong> <code class="language-text highlight">P(3) = true</code>。</li>
+<li><strong>更新搜索范围</strong>：<code class="language-text highlight">L = mid + 1 = 4</code>，并记录答案：<code class="language-text highlight">ans = 3</code>。</li>
+</ul>
+<hr />
+<h3 id="_37"><strong>二分查找结束</strong></h3>
+<ul>
+<li>当 <code class="language-text highlight">L &gt; R</code> 时，二分查找结束。</li>
+<li>最终答案：<code class="language-text highlight">ans = 3</code>。</li>
+</ul>
+<hr />
+<h3 id="_38"><strong>总结</strong></h3>
+<p>在距离为 <code class="language-text highlight">3</code> 时：
+- 放置第 1 头牛在位置 <code class="language-text highlight">1</code>。
+- 放置第 2 头牛在位置 <code class="language-text highlight">4</code>。
+- 放置第 3 头牛在位置 <code class="language-text highlight">8</code>。
+成功满足条件，因此输出：
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>3
+</span></code></pre></div></p>
+<h1 id="135">13.5 一元三次方程求解</h1>
+<h2 id="_39">题目描述</h2>
+<p>有形如：<span class="arithmatex">\(a x^3 + b x^2 + c x + d = 0\)</span>  这样的一个一元三次方程。给出该方程中各项的系数（<span class="arithmatex">\(a,b,c,d\)</span> 均为实数），并约定该方程存在三个不同实根（根的范围在 <span class="arithmatex">\(-100\)</span> 至 <span class="arithmatex">\(100\)</span> 之间），且根与根之差的绝对值 <span class="arithmatex">\(\ge 1\)</span>。要求由小到大依次在同一行输出这三个实根(根与根之间留有空格)，并精确到小数点后 <span class="arithmatex">\(2\)</span> 位。
+提示：记方程 <span class="arithmatex">\(f(x) = 0\)</span>，若存在 <span class="arithmatex">\(2\)</span> 个数 <span class="arithmatex">\(x_1\)</span> 和 <span class="arithmatex">\(x_2\)</span>，且 <span class="arithmatex">\(x_1 &lt; x_2\)</span>，<span class="arithmatex">\(f(x_1) \times f(x_2) &lt; 0\)</span>，则在 <span class="arithmatex">\((x_1, x_2)\)</span> 之间一定有一个根。</p>
+<h2 id="_40">输入格式</h2>
+<p>一行，<span class="arithmatex">\(4\)</span> 个实数 <span class="arithmatex">\(a, b, c, d\)</span>。</p>
+<h2 id="_41">输出格式</h2>
+<p>一行，<span class="arithmatex">\(3\)</span> 个实根，从小到大输出，并精确到小数点后 <span class="arithmatex">\(2\)</span> 位。</p>
+<h2 id="1_12">样例 #1</h2>
+<h3 id="1_13">样例输入 #1</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>1 -5 -4 20
+</span></code></pre></div>
+<h3 id="1_14">样例输出 #1</h3>
+<div class="language-text highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>-2.00 2.00 5.00
+</span></code></pre></div>
+<h1 id="_42">零点存在性定理</h1>
+<h2 id="_43">定理内容</h2>
+<p><strong>零点存在性定理</strong>（也称为 <strong>介值定理</strong> 或 <strong>中值定理</strong>）说明了对于连续函数，在给定区间内，如果函数值在区间的两端符号不同，那么函数一定在该区间内有至少一个零点。</p>
+<h3 id="_44">定理表述</h3>
+<p>设函数 <span class="arithmatex">\( f \)</span> 在区间 <span class="arithmatex">\([a, b]\)</span> 上是连续的，如果：</p>
+<div class="arithmatex">\[
+f(a) \cdot f(b) &lt; 0
+\]</div>
+<p>那么，存在至少一个点 <span class="arithmatex">\( c \in (a, b) \)</span>，使得：</p>
+<div class="arithmatex">\[
+f(c) = 0
+\]</div>
+<h3 id="_45">几何解释</h3>
+<p>若函数在区间 <span class="arithmatex">\([a, b]\)</span> 的两端 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 处的值符号不同（即一个为正，一个为负），且该函数是连续的，那么必定有一个点 <span class="arithmatex">\(c\)</span>，使得函数值为零（即函数图像一定穿过 <span class="arithmatex">\(x\)</span>-轴）。</p>
+<div class="language-cpp highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span style="color: #9C6500">#include</span><span style="color: #3D7B7B; font-style: italic">&lt;cstdio&gt;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span style="color: #9C6500">#include</span><span style="color: #3D7B7B; font-style: italic">&lt;iostream&gt;</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span style="color: #9C6500">#include</span><span style="color: #3D7B7B; font-style: italic">&lt;cmath&gt;</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span style="color: #008000; font-weight: bold">using</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">namespace</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">std</span>;
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span style="color: #9C6500">#define eps 1e-4</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span style="color: #B00040">double</span><span style="color: #BBB"> </span>A,<span style="color: #BBB"> </span>B,<span style="color: #BBB"> </span>C,<span style="color: #BBB"> </span>D;
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span style="color: #B00040">double</span><span style="color: #BBB"> </span><span style="color: #00F">f</span>(<span style="color: #B00040">double</span><span style="color: #BBB"> </span>x)<span style="color: #BBB"> </span>{
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>A<span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span>x<span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span>x<span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span>x<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>B<span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span>x<span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span>x<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>C<span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span>x<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>D;
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>}
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span style="color: #B00040">int</span><span style="color: #BBB"> </span><span style="color: #00F">main</span>()<span style="color: #BBB"> </span>{
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span style="color: #BBB">    </span>cin<span style="color: #BBB"> </span><span style="color: #666">&gt;&gt;</span><span style="color: #BBB"> </span>A<span style="color: #BBB"> </span><span style="color: #666">&gt;&gt;</span><span style="color: #BBB"> </span>B<span style="color: #BBB"> </span><span style="color: #666">&gt;&gt;</span><span style="color: #BBB"> </span>C<span style="color: #BBB"> </span><span style="color: #666">&gt;&gt;</span><span style="color: #BBB"> </span>D;
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">for</span><span style="color: #BBB"> </span>(<span style="color: #B00040">int</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">-100</span>;<span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">&lt;=</span><span style="color: #BBB"> </span><span style="color: #666">100</span>;<span style="color: #BBB"> </span>i<span style="color: #666">++</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span style="color: #BBB">        </span><span style="color: #B00040">double</span><span style="color: #BBB"> </span>L<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>i,<span style="color: #BBB"> </span>R<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>i<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span><span style="color: #666">1</span>,<span style="color: #BBB"> </span>mid;
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(fabs(f(L))<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>eps)
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span style="color: #BBB">            </span>printf(<span style="color: #BA2121">&quot;%.2lf &quot;</span>,<span style="color: #BBB"> </span>L);
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">else</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(fabs(f(R))<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span>eps)
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span style="color: #BBB">            </span><span style="color: #008000; font-weight: bold">continue</span>;
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">else</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(f(L)<span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span>f(R)<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span><span style="color: #666">0</span>)<span style="color: #BBB"> </span>{
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span style="color: #BBB">            </span><span style="color: #008000; font-weight: bold">while</span><span style="color: #BBB"> </span>(R<span style="color: #BBB"> </span><span style="color: #666">-</span><span style="color: #BBB"> </span>L<span style="color: #BBB"> </span><span style="color: #666">&gt;</span><span style="color: #BBB"> </span>eps)<span style="color: #BBB"> </span>{
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span style="color: #BBB">                </span>mid<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>(L<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>R)<span style="color: #BBB"> </span><span style="color: #666">/</span><span style="color: #BBB"> </span><span style="color: #666">2</span>;
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span style="color: #BBB">                </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(f(mid)<span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span>f(R)<span style="color: #BBB"> </span><span style="color: #666">&gt;</span><span style="color: #BBB"> </span><span style="color: #666">0</span>)
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span style="color: #BBB">                    </span>R<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid;
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a><span style="color: #BBB">                </span><span style="color: #008000; font-weight: bold">else</span>
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span style="color: #BBB">                    </span>L<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>mid;
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a><span style="color: #BBB">            </span>}
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a><span style="color: #BBB">            </span>printf(<span style="color: #BA2121">&quot;%.2lf &quot;</span>,<span style="color: #BBB"> </span>L);
+</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span style="color: #BBB">        </span>}
+</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a><span style="color: #BBB">    </span>}
+</span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a>}
+</span></code></pre></div>
+<h1 id="end">END</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../%E4%BA%8C%E5%8F%89%E6%A0%91/%E5%BC%95%E5%85%A5/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 引入">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                引入
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../0035.%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/" class="md-footer__link md-footer__link--next" aria-label="Next: 0035_搜索插入位置">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                0035_搜索插入位置
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/MU-ty" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "navigation.footer", "navigation.path"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+      
+        <script src="../../../javascripts/katex-render.js"></script>
+      
+    
+  </body>
+</html>

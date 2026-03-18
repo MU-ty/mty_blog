@@ -1,0 +1,3824 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/Deep%20Learning/13.LeNet%2C%20AlexNet%2C%20VGG%20%E5%92%8C%20NiN/">
+      
+      
+        <link rel="prev" href="../12.%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+      
+      
+        <link rel="next" href="../14.GoogLeNet%E3%80%81%E6%89%B9%E9%87%8F%E8%A7%84%E8%8C%83%E5%8C%96%E3%80%81ResNet%E3%80%81DenseNet/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>13.LeNet, AlexNet, VGG 和 NiN - MU-ty's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lenet-alexnet-vgg-nin" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MU-ty&#39;s Blog" class="md-header__button md-logo" aria-label="MU-ty's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MU-ty's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              13.LeNet, AlexNet, VGG 和 NiN
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../leetcode/" class="md-tabs__link">
+          
+  
+  
+  LeetCode
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Deep Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/changelog/" class="md-tabs__link">
+          
+  
+  
+  更新日志
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MU-ty&#39;s Blog" class="md-nav__button md-logo" aria-label="MU-ty's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MU-ty's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LeetCode
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LeetCode
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    哈希
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    哈希
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E5%93%88%E5%B8%8C/0001.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0001.两数之和
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E5%93%88%E5%B8%8C/0049.%20%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0049.字母异位词分组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E5%93%88%E5%B8%8C/0128.%20%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0128.最长连续序列
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    双指针
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    双指针
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E5%8F%8C%E6%8C%87%E9%92%88/0283.%20%E7%A7%BB%E5%8A%A8%E9%9B%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0283.移动零
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E5%8F%8C%E6%8C%87%E9%92%88/0011.%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0011.盛最多水的容器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E5%8F%8C%E6%8C%87%E9%92%88/0015.%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0015.三数之和
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E5%8F%8C%E6%8C%87%E9%92%88/0042.%E6%8E%A5%E9%9B%A8%E6%B0%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0042.接雨水
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    滑动窗口
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    滑动窗口
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/1456.%20%E5%AE%9A%E9%95%BF%E5%AD%90%E4%B8%B2%E4%B8%AD%E5%85%83%E9%9F%B3%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1456.定长子串中元音的最大数目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/643.%20%E5%AD%90%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%B9%B3%E5%9D%87%E6%95%B0%20I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    643.子数组最大平均数Ⅰ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/1343.%20%E5%A4%A7%E5%B0%8F%E4%B8%BA%20K%20%E4%B8%94%E5%B9%B3%E5%9D%87%E5%80%BC%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E%E9%98%88%E5%80%BC%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E6%95%B0%E7%9B%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1343.大小为K且平均值大于等于阈值的子数组数目
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    链表
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    链表
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E9%93%BE%E8%A1%A8/0160.%20%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0160.相交链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E9%93%BE%E8%A1%A8/0206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0206.反转链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E9%93%BE%E8%A1%A8/0876.%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0876.链表的中间结点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E9%93%BE%E8%A1%A8/0234.%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0234.回文链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E9%93%BE%E8%A1%A8/0141.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8%E2%85%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0141.环形链表Ⅰ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E9%93%BE%E8%A1%A8/0142.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8%20%E2%85%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0142.环形链表Ⅱ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E9%93%BE%E8%A1%A8/0021.%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0021.合并两个有序链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E9%93%BE%E8%A1%A8/0023.%E5%90%88%E5%B9%B6k%E4%B8%AA%E5%8D%87%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0023.合并k个升序链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E9%93%BE%E8%A1%A8/0002.%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0002.两数相加
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E9%93%BE%E8%A1%A8/0086.%E5%88%86%E9%9A%94%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0086.分隔链表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E9%93%BE%E8%A1%A8/0019.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0019.删除链表的倒数第N个节点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    二叉树
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    二叉树
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E4%BA%8C%E5%8F%89%E6%A0%91/%E5%BC%95%E5%85%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    二分查找
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    二分查找
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/%E5%BC%95%E5%85%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    引入
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/0035.%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0035_搜索插入位置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/0074.%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0074_搜索二维矩阵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/0034.%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0034_在排序数组中查找元素的第一个和最后一个位置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/0033.%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0033_搜索旋转排序数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/0153.%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0153_寻找旋转排序数组中的最小值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/0004.%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0004_寻找两个正序数组的中位数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    栈
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    栈
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E6%A0%88/0020.%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0020_有效的括号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E6%A0%88/0155.%E6%9C%80%E5%B0%8F%E6%A0%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0155_最小栈
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E6%A0%88/Q1.%20%E7%94%A8%E6%A0%88%E6%93%8D%E4%BD%9C%E6%9E%84%E5%BB%BA%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q1. 用栈操作构建数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E6%A0%88/Q2.%20%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q2. 逆波兰表达式求值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    补充
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    补充
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E8%A1%A5%E5%85%85/%E4%BA%8C%E5%8F%89%E5%A0%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    二叉堆
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E8%A1%A5%E5%85%85/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    优先队列
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E8%A1%A5%E5%85%85/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树状数组
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E8%A1%A5%E5%85%85/%E7%BA%BF%E6%AE%B5%E6%A0%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线段树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../leetcode/%E8%A1%A5%E5%85%85/KMP%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KMP算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deep Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.线性代数基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.概率统计基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%E5%AF%BC%E6%95%B0%E3%80%81%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E3%80%81%E5%A4%8D%E6%9D%82%E5%BA%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.导数、反向传播、复杂度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%E7%BA%BF%E6%80%A7%E6%96%B9%E6%B3%95%E3%80%81%E5%9F%BA%E7%A1%80%E4%BC%98%E5%8C%96%E5%92%8C%20softmax%20%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.线性方法、基础优化和 softmax 回归
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%E4%B8%8E%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5.最大似然估计 和 逻辑回归
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6.%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6.多层感知机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7.%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9%EF%BC%8C%E6%AC%A0%E6%8B%9F%E5%90%88%E4%B8%8E%E8%BF%87%E6%8B%9F%E5%90%88%EF%BC%8C%E6%9D%83%E9%87%8D%E8%A1%B0%E5%87%8F%20%E5%92%8C%20%E4%B8%A2%E5%BC%83%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7.模型选择，欠拟合与过拟合，权重衰减 和 丢弃法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93%E2%85%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阶段总结Ⅰ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8.%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD%E3%80%81%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E3%80%81%E8%AE%A1%E7%AE%97%E5%9B%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.前向传播、反向传播、计算图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.%E6%95%B0%E5%80%BC%E7%A8%B3%E5%AE%9A%E6%80%A7%E3%80%81%E6%A8%A1%E5%9E%8B%E5%88%9D%E5%A7%8B%E5%8C%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9.数值稳定性、模型初始化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10.%E7%8E%AF%E5%A2%83%E3%80%81%E5%88%86%E5%B8%83%E5%81%8F%E7%A7%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10.环境、分布偏移
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11.%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11.深度学习计算
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12.%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12.卷积神经网络
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13.LeNet, AlexNet, VGG 和 NiN
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13.LeNet, AlexNet, VGG 和 NiN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#131-lenet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 LeNet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.1 LeNet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lenet2828" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LeNet的数据流（以28×28单通道输入为例）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LeNet的训练要点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenet_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LeNet的核心意义与延伸
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-alexnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 AlexNet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.2 AlexNet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1321alexnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.1AlexNet的背景与突破性意义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1322alexnetlenet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.2AlexNet与LeNet的核心差异（架构设计）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1323alexnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.3AlexNet的关键技术创新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1324" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.4工程实现要点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-vgg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 VGG
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.3 VGG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1331-vgg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3.1 核心设计思想（VGG的灵魂）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1332-vgg-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3.2 网络结构（以VGG-11为例）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1333-alexnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3.3 关键特性（与AlexNet对比）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1335" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3.5总结
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1336" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3.6 进程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#134nin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4网络中的网络NiN
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.4网络中的网络NiN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1341-nin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4.1 核心设计思想（NiN的灵魂）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1342-nin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4.2 网络结构（NiN的整体架构）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1343-alexnetvgg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4.3 关键特性（与AlexNet/VGG对比）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1344" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4.4 实践要点（代码/训练层面）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1345" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4.5 总结
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#135" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 总结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14.GoogLeNet%E3%80%81%E6%89%B9%E9%87%8F%E8%A7%84%E8%8C%83%E5%8C%96%E3%80%81ResNet%E3%80%81DenseNet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14.GoogLeNet、批量规范化、ResNet、DenseNet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15.%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15.序列模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16.%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. 注意力机制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    更新日志
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#131-lenet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 LeNet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.1 LeNet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lenet2828" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LeNet的数据流（以28×28单通道输入为例）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LeNet的训练要点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenet_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LeNet的核心意义与延伸
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-alexnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 AlexNet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.2 AlexNet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1321alexnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.1AlexNet的背景与突破性意义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1322alexnetlenet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.2AlexNet与LeNet的核心差异（架构设计）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1323alexnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.3AlexNet的关键技术创新
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1324" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.4工程实现要点
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-vgg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 VGG
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.3 VGG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1331-vgg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3.1 核心设计思想（VGG的灵魂）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1332-vgg-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3.2 网络结构（以VGG-11为例）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1333-alexnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3.3 关键特性（与AlexNet对比）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1335" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3.5总结
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1336" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3.6 进程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#134nin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4网络中的网络NiN
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.4网络中的网络NiN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1341-nin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4.1 核心设计思想（NiN的灵魂）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1342-nin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4.2 网络结构（NiN的整体架构）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1343-alexnetvgg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4.3 关键特性（与AlexNet/VGG对比）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1344" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4.4 实践要点（代码/训练层面）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1345" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4.5 总结
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#135" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 总结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    首页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Deep Learning
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lenet-alexnet-vgg-nin">LeNet, AlexNet, VGG 和 NiN</h1>
+<blockquote>
+<p>内容概述：</p>
+<ul>
+<li>LeNet（第一个卷积神经网络）</li>
+<li>AlexNet<ul>
+<li>升级 版的 LeNet</li>
+<li>ReLu 激活， 丢弃法，平移不变性</li>
+</ul>
+</li>
+<li>VGG<ul>
+<li>升华版的 AlexNet</li>
+<li>重复的 VGG 块</li>
+</ul>
+</li>
+<li>NiN<ul>
+<li>1x1 卷积 + 全局池化</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="131-lenet">13.1 LeNet</h2>
+<p><img alt="1772456294984" src="../image/13.LeNet%2CAlexNet%2CVGG%E5%92%8CNiN/1772456294984.png" /></p>
+<p>LeNet 是第一个卷积神经网络，它由两个卷积层(卷积编码器)和三个全连接层(全连接层稠密块)组成。用于手写数字识别，输入是 32x32 的灰度图像，输出是 10 个类别的概率。</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>组成层（按顺序）</th>
+<th>关键参数/特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>卷积编码器</td>
+<td>卷积层1 → Sigmoid → 平均池化 → 卷积层2 → Sigmoid → 平均池化</td>
+<td>① 卷积核均为5×5，激活函数用Sigmoid（当时ReLU未出现）；<br>② 卷积层1输出6通道，卷积层2输出16通道；<br>③ 池化层为2×2平均池化（步幅2），空间分辨率减半；<br>④ 卷积层1加2像素填充（补偿5×5卷积核的尺寸损失），卷积层2无填充。</td>
+</tr>
+<tr>
+<td>全连接密集块</td>
+<td>Flatten → 全连接层1 → Sigmoid → 全连接层2 → Sigmoid → 全连接层3</td>
+<td>① Flatten将4维特征（批量×通道×高×宽）展平为2维（批量×特征数）；<br>② 全连接层维度：16×5×5→120→84→10（10对应分类数，Fashion-MNIST为10类）；<br>③ 最后一层去掉了原始模型的高斯激活，直接输出分类概率。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenet2828">LeNet的数据流（以28×28单通道输入为例）</h3>
+<p>```Plain Text</p>
+<p>1×28×28（输入）→ 6×28×28（卷积1+填充）→ 6×14×14（平均池化）→ 16×10×10（卷积2）→ 16×5×5（平均池化）→ 400维（展平）→ 120维 → 84维 → 10维（输出）
+```</p>
+<p>核心规律：随着网络加深，<strong>空间分辨率逐渐降低</strong>（高/宽减小），<strong>通道数逐渐增加</strong>（从1→6→16），最后通过全连接层映射到分类维度。</p>
+<h3 id="lenet">LeNet的训练要点</h3>
+<ul>
+<li>
+<p>硬件：卷积计算成本高，优先使用GPU加速训练；</p>
+</li>
+<li>
+<p>初始化：采用Xavier初始化卷积层和全连接层的权重（保证梯度稳定传播）；</p>
+</li>
+<li>
+<p>优化器：小批量随机梯度下降（SGD）；</p>
+</li>
+<li>
+<p>损失函数：交叉熵损失（适配分类任务）；</p>
+</li>
+<li>
+<p>评估：需将数据移至GPU显存，通过<code class="language-text highlight">evaluate_accuracy_gpu</code>函数计算精度，训练中区分训练/评估模式（<code class="language-text highlight">net.train()</code>/<code class="language-text highlight">net.eval()</code>）。</p>
+</li>
+</ul>
+<h3 id="lenet_1">LeNet的核心意义与延伸</h3>
+<ul>
+<li>
+<p>验证了卷积神经网络在计算机视觉任务的有效性，证明“保留空间结构”比展平图像的全连接网络更高效（参数更少、模型更简洁）；</p>
+</li>
+<li>
+<p>确立了卷积神经网络的经典设计范式：<strong>卷积（提取空间特征）→ 激活（引入非线性）→ 池化（降维+鲁棒性）→ 全连接（分类）</strong>；</p>
+</li>
+<li>
+<p>后续的CNN（如AlexNet、VGG）均基于LeNet的核心思想，仅在激活函数（ReLU替代Sigmoid）、池化方式（最大池化替代平均池化）、网络深度等方面优化。</p>
+</li>
+</ul>
+<h2 id="132-alexnet">13.2 AlexNet</h2>
+<p><img alt="1772461730507" src="../image/13.LeNet%2CAlexNet%2CVGG%E5%92%8CNiN/1772461730507.png" /></p>
+<h3 id="1321alexnet">13.2.1AlexNet的背景与突破性意义</h3>
+<ol>
+<li>
+<p><strong>时代背景</strong>：LeNet提出后，CNN因<strong>数据规模小、硬件算力不足、训练技巧缺失</strong>，在2012年前未主导计算机视觉领域；传统方法依赖手工设计特征（如SIFT/SURF），而AlexNet首次证明<strong>学习到的特征可超越手工设计特征</strong>。</p>
+</li>
+<li>
+<p><strong>突破的核心条件</strong>：</p>
+<ul>
+<li>
+<p>数据：ImageNet数据集（百万级样本、1000类）提供了大规模标注数据，解决了深度模型的数据需求；</p>
+</li>
+<li>
+<p>硬件：GPU（如NVIDIA GTX580）的并行计算能力，解决了卷积/矩阵乘法的计算瓶颈；</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>竞赛成绩</strong>：2012年ImageNet挑战赛以绝对优势夺冠，打破计算机视觉研究格局，直接推动深度学习热潮。</p>
+</li>
+</ol>
+<h3 id="1322alexnetlenet">13.2.2AlexNet与LeNet的核心差异（架构设计）</h3>
+<p><img alt="1772851803362" src="../image/13.LeNet%2CAlexNet%2CVGG%E5%92%8CNiN/1772851803362.png" /></p>
+<p>AlexNet继承LeNet“卷积+池化+全连接”的核心范式，但在规模和细节上大幅升级，核心差异如下：</p>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>LeNet（浅层）</th>
+<th>AlexNet（深层）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>网络深度</td>
+<td>2卷积 + 2全连接（共4层）</td>
+<td>5卷积 + 2全连接 + 1输出层（共8层）</td>
+</tr>
+<tr>
+<td>卷积窗口</td>
+<td>固定5×5</td>
+<td>多尺度（11×11→5×5→3×3）</td>
+</tr>
+<tr>
+<td>卷积通道数</td>
+<td>少（如6/16）</td>
+<td>多（如96/256/384，是LeNet的10倍）</td>
+</tr>
+<tr>
+<td>池化层</td>
+<td>2×2池化</td>
+<td>3×3最大池化（步幅2）</td>
+</tr>
+<tr>
+<td>全连接层规模</td>
+<td>小（120→84）</td>
+<td>超大（4096×2，参数近1GB）</td>
+</tr>
+<tr>
+<td>激活函数</td>
+<td>Sigmoid</td>
+<td>ReLU（核心改进）</td>
+</tr>
+<tr>
+<td>正则化方式</td>
+<td>仅权重衰减</td>
+<td>Dropout（全连接层）+ 权重衰减</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1323alexnet">13.2.3AlexNet的关键技术创新</h3>
+<ol>
+<li>
+<p><strong>ReLU激活函数</strong>：</p>
+<ul>
+<li>
+<p>计算更简单（无需Sigmoid的幂运算）；</p>
+</li>
+<li>
+<p>正区间梯度恒为1，解决Sigmoid在饱和区的<strong>梯度消失</strong>问题，降低参数初始化难度。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Dropout暂退法</strong>：</p>
+<ul>
+<li>
+<p>作用于全连接层，随机丢弃50%神经元（<code class="language-text highlight">p=0.5</code>）；</p>
+</li>
+<li>
+<p>核心作用：控制模型复杂度，减少过拟合。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>数据增强</strong>：</p>
+<ul>
+<li>
+<p>训练时对图像做翻转、裁切、变色等操作，扩充样本量；</p>
+</li>
+<li>
+<p>效果：提升模型健壮性，缓解过拟合。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>GPU并行计算</strong>：</p>
+<ul>
+<li>
+<p>利用双GPU并行处理卷积/矩阵乘法，大幅提升训练效率；</p>
+</li>
+<li>
+<p>标志性成果：cuda-convnet成为行业标准，解决了深度CNN的算力瓶颈。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="1324">13.2.4工程实现要点</h3>
+<ol>
+<li>
+<p>输入适配：ImageNet图像分辨率为224×224，故第一层用11×11大卷积窗口+步幅4，适配大尺寸输入；</p>
+</li>
+<li>
+<p>填充策略：卷积层使用padding保证输入输出尺寸匹配（如5×5卷积padding=2）；</p>
+</li>
+<li>
+<p>数据集适配：示例中因使用Fashion-MNIST（28×28），需resize到224×224，输出层类别改为10（原论文为1000）；</p>
+</li>
+<li>
+<p>训练细节：使用更小的学习率（0.01），因网络更深、图像分辨率更高，训练成本显著增加。</p>
+</li>
+</ol>
+<h2 id="133-vgg">13.3 VGG</h2>
+<h3 id="1331-vgg">13.3.1 核心设计思想（VGG的灵魂）</h3>
+<ul>
+<li>
+<p><strong>模块化/块化设计</strong>：VGG首次系统性地将「卷积层+激活层+池化层」封装为可复用的<strong>VGG块</strong>，摆脱了逐一层堆叠的低效方式，让网络架构设计更抽象、更易扩展。</p>
+</li>
+<li>
+<p><strong>小卷积核替代大卷积核</strong>：用多个3×3的小卷积核（带padding=1保持分辨率）替代大卷积核（如7×7、5×5），例如2个3×3卷积层的感受野等价于1个5×5卷积层，3个3×3等价于1个7×7。</p>
+<ul>
+<li>优势：<strong>减少参数数量</strong>（3×3×3=27 &lt; 7×7=49）、<strong>增加非线性</strong>（多一层ReLU激活），同时保持相同的感受野。</li>
+</ul>
+</li>
+<li>
+<p><strong>分辨率逐级下采样</strong>：每个VGG块末尾用2×2最大池化（stride=2），让特征图的高/宽每次减半，通道数逐级翻倍（64→128→256→512→512）。</p>
+</li>
+</ul>
+<h3 id="1332-vgg-11">13.3.2 网络结构（以VGG-11为例）</h3>
+<p><img alt="1772857933778" src="../image/13.LeNet%2CAlexNet%2CVGG%E5%92%8CNiN/1772857933778.png" /></p>
+<p>VGG网络分为两大部分，结构清晰且可复用：</p>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>组成</th>
+<th>关键细节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>卷积特征提取</td>
+<td>5个VGG块（前2块各1个卷积层，后3块各2个卷积层）+ 池化层</td>
+<td>输入：224×224单/三通道；输出：7×7×512的特征图（5次池化后分辨率从224→7）</td>
+</tr>
+<tr>
+<td>全连接分类</td>
+<td>3个全连接层（4096→4096→10）+ ReLU + Dropout(0.5) + Flatten</td>
+<td>Flatten将7×7×512展平为25088维向量；Dropout防止过拟合</td>
+</tr>
+<tr>
+<td>- VGG-11的命名：8个卷积层 + 3个全连接层 = 11个可训练层（这是VGG系列命名的规则，如VGG-16=13个卷积+3个全连接）。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="1333-alexnet">13.3.3 关键特性（与AlexNet对比）</h3>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>AlexNet</th>
+<th>VGG-11</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>卷积核</td>
+<td>7×7（第一层）+ 3×3</td>
+<td>全3×3</td>
+</tr>
+<tr>
+<td>架构灵活性</td>
+<td>逐一层堆叠，无模块化</td>
+<td>块化设计，可灵活调整块数/卷积层数</td>
+</tr>
+<tr>
+<td>参数效率</td>
+<td>大卷积核参数多</td>
+<td>小卷积核参数少，效率更高</td>
+</tr>
+<tr>
+<td>复杂度</td>
+<td>中等</td>
+<td>更高（特征提取更充分）</td>
+</tr>
+<tr>
+<td>### 13.3.4 实践要点（代码/训练层面）</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>VGG块的实现</strong>：核心函数<code class="language-text highlight">vgg_block(num_convs, in_channels, out_channels)</code>，通过循环堆叠指定数量的卷积层，最后拼接池化层，返回<code class="language-text highlight">nn.Sequential</code>模块。</p>
+</li>
+<li>
+<p><strong>通道数缩放</strong>：实际训练（如Fashion-MNIST）时，可按比例缩小通道数（如<code class="language-text highlight">ratio=4</code>），降低计算量（原始VGG通道数大，小数据集无需全量参数）。</p>
+</li>
+<li>
+<p><strong>输入适配</strong>：VGG要求输入分辨率为224×224，因此处理MNIST（28×28）时需<code class="language-text highlight">resize=224</code>。</p>
+</li>
+<li>
+<p><strong>训练技巧</strong>：使用略高的学习率（如0.05），利用GPU加速（VGG计算量比AlexNet大），Dropout(0.5)抑制过拟合。</p>
+</li>
+</ul>
+<h3 id="1335">13.3.5总结</h3>
+<ol>
+<li>
+<p><strong>设计核心</strong>：VGG的精髓是「块化复用+小卷积核+逐级下采样」，让网络架构更简洁、参数更高效；</p>
+</li>
+<li>
+<p><strong>结构关键</strong>：VGG-11由5个模块化VGG块+3个全连接层组成，特征图分辨率逐级减半、通道数逐级翻倍；</p>
+</li>
+<li>
+<p><strong>实践要点</strong>：小卷积核替代大卷积核是核心技巧，实际应用中可缩放通道数适配小数据集，降低计算成本。</p>
+</li>
+</ol>
+<h3 id="1336">13.3.6 进程</h3>
+<p><strong>LeNet</strong>：2卷积层+汇聚层+2隐藏层</p>
+<p><strong>AlexNet</strong>:：更大更深的LeNet、ReLU激活函数、Dropout暂退法、数据增强、GPU并行计算</p>
+<p><strong>VGG</strong>：更大更深的AlexNet（重复的VGG）</p>
+<h2 id="134nin">13.4网络中的网络NiN</h2>
+<p>NiN是卷积神经网络发展中的关键里程碑，核心创新是<strong>用逐像素的多层感知机替代全连接层</strong>，彻底改变了传统CNN的收尾方式。以下从「核心设计思想、网络结构、关键特性、实践要点」四个维度梳理核心知识点：</p>
+<h3 id="1341-nin">13.4.1 核心设计思想（NiN的灵魂）</h3>
+<ul>
+<li><strong>逐像素MLP（1×1卷积的核心价值）</strong>：</li>
+</ul>
+<p>NiN的核心创新是在每个空间像素位置（高度×宽度）上，对通道维度应用多层感知机（MLP）。具体通过<strong>1×1卷积层</strong>实现：</p>
+<ul>
+<li>
+<p>1×1卷积不改变特征图的高/宽，仅对每个像素的通道做线性变换+ReLU激活，相当于“逐像素全连接”；</p>
+</li>
+<li>
+<p>一个NiN块包含「普通卷积层 + 两个1×1卷积层」，让每个像素的特征表达更具非线性，同时不破坏空间结构。</p>
+</li>
+<li>
+<p><strong>移除全连接层，改用全局平均池化</strong>：</p>
+</li>
+</ul>
+<p>传统CNN（LeNet/AlexNet/VGG）依赖全连接层做分类，但全连接层参数多、易过拟合；NiN直接将最后一个NiN块的输出通道数设为类别数，再通过<strong>全局自适应平均池化（AdaptiveAvgPool2d）</strong> 将每个通道的特征图压缩为1×1，最后展平即可输出分类结果。</p>
+<h3 id="1342-nin">13.4.2 网络结构（NiN的整体架构）</h3>
+<p><img alt="1772893759454" src="../image/13.LeNet%2CAlexNet%2CVGG%E5%92%8CNiN/1772893759454.png" /></p>
+<p>NiN的结构可分为“特征提取”和“分类收尾”两部分，完全复用模块化设计：</p>
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>组成</th>
+<th>关键细节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>特征提取</td>
+<td>4个NiN块 + 3个MaxPool2d（3×3，stride=2） + Dropout(0.5)</td>
+<td>卷积核尺寸：11×11→5×5→3×3→3×3；输出通道：96→256→384→10（类别数）；池化后分辨率逐级降低</td>
+</tr>
+<tr>
+<td>分类收尾</td>
+<td>AdaptiveAvgPool2d((1,1)) + Flatten</td>
+<td>AdaptiveAvgPool2d：无论输入特征图尺寸是多少，都输出1×1；Flatten将10×1×1展平为10维向量</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>输入：224×224单通道（Fashion-MNIST）；</p>
+</li>
+<li>
+<p>输出：10维向量（对应10个类别）；</p>
+</li>
+<li>
+<p>关键尺寸变化（以输入224×224为例）：</p>
+</li>
+</ul>
+<p>224→54（11×11卷积，stride=4）→26（3×3池化）→26（5×5卷积，padding=2）→12（池化）→12（3×3卷积）→5（池化）→5（最后一个NiN块）→1×1（全局池化）。</p>
+<h3 id="1343-alexnetvgg">13.4.3 关键特性（与AlexNet/VGG对比）</h3>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>AlexNet/VGG</th>
+<th>NiN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分类层</td>
+<td>全连接层（参数多、易过拟合）</td>
+<td>全局平均池化+1×1卷积（无全连接，参数少）</td>
+</tr>
+<tr>
+<td>特征增强</td>
+<td>仅卷积层+激活层</td>
+<td>卷积层+两层1×1卷积（逐像素MLP，非线性更强）</td>
+</tr>
+<tr>
+<td>参数规模</td>
+<td>大（仅全连接层就占大量参数）</td>
+<td>小（移除全连接层，参数减少50%以上）</td>
+</tr>
+<tr>
+<td>训练效率</td>
+<td>快（全连接层计算简单）</td>
+<td>稍慢（1×1卷积增加逐像素计算量）</td>
+</tr>
+<tr>
+<td>过拟合风险</td>
+<td>高（全连接层易记住噪声）</td>
+<td>低（无全连接层，Dropout进一步抑制过拟合）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1344">13.4.4 实践要点（代码/训练层面）</h3>
+<ul>
+<li>
+<p><strong>NiN块的实现</strong>：核心函数<code class="language-text highlight">nin_block(in_channels, out_channels, kernel_size, strides, padding)</code>，固定拼接「普通卷积+ReLU + 1×1卷积+ReLU + 1×1卷积+ReLU」，返回<code class="language-text highlight">nn.Sequential</code>模块。</p>
+</li>
+<li>
+<p><strong>AdaptiveAvgPool2d的优势</strong>：无需手动计算池化核尺寸，输入特征图是5×5或7×7都能输出1×1，适配性更强。</p>
+</li>
+<li>
+<p><strong>训练技巧</strong>：</p>
+<ul>
+<li>
+<p>学习率可设为0.1（比VGG稍高），batch_size=128，epoch=10；</p>
+</li>
+<li>
+<p>加入Dropout(0.5)进一步抑制过拟合；</p>
+</li>
+<li>
+<p>输入需resize到224×224（与AlexNet/VGG一致）。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1345">13.4.5 总结</h3>
+<ol>
+<li>
+<p><strong>设计核心</strong>：NiN的核心是「1×1卷积实现逐像素MLP」+「全局平均池化替代全连接层」，既增强了特征表达，又大幅减少参数、降低过拟合；</p>
+</li>
+<li>
+<p><strong>结构关键</strong>：NiN由模块化的NiN块组成，卷积核逐级缩小，通道数先增后减至类别数，最后通过自适应池化收尾；</p>
+</li>
+<li>
+<p><strong>实践价值</strong>：NiN是首个彻底抛弃全连接层的经典CNN，其1×1卷积和全局池化的设计被ResNet、GoogLeNet等后续网络广泛借鉴。</p>
+</li>
+</ol>
+<h2 id="135">13.5 总结</h2>
+<ul>
+<li>LeNet 第一个卷积神经网络</li>
+<li>AlexNet  升级版的LeNet、ReLU激活、丢弃法、平移不变性</li>
+<li>VGG   升华版的AlexNet、重复的VGG</li>
+<li>NiN  引入1×1卷积、全局池化、无全连接层，首次彻底抛弃全连接层</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../12.%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 12.卷积神经网络">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                12.卷积神经网络
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../14.GoogLeNet%E3%80%81%E6%89%B9%E9%87%8F%E8%A7%84%E8%8C%83%E5%8C%96%E3%80%81ResNet%E3%80%81DenseNet/" class="md-footer__link md-footer__link--next" aria-label="Next: 14.GoogLeNet、批量规范化、ResNet、DenseNet">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                14.GoogLeNet、批量规范化、ResNet、DenseNet
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/MU-ty" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "navigation.footer", "navigation.path"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+      
+        <script src="../../javascripts/katex-render.js"></script>
+      
+    
+  </body>
+</html>
