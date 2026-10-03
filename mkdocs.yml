@@ -1,7 +1,20 @@
 site_name: MU-ty's Blog
-site_url: https://mydomain.org/mysite
+site_url: https://mu-ty.github.io/mty_blog/
+site_description: 记录算法、深度学习与编程实践，在学习中建立自己的知识体系。
+site_author: MU-ty
+repo_url: https://github.com/MU-ty/mty_blog
+repo_name: MU-ty/mty_blog
 
 markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.details
+  - toc:
+      permalink: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.highlight:
@@ -21,8 +34,30 @@ markdown_extensions:
 
 theme:
   name: material
+  language: zh
+  font: false
+  icon:
+    logo: material/code-tags
+  palette:
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: 切换深色模式
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: 切换浅色模式
   features:
     - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
     - content.code.copy
     - content.code.select
     - content.code.annotate
@@ -31,6 +66,7 @@ theme:
     - navigation.path
 
 extra_css:
+  - stylesheets/blog.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css
 
 extra_javascript:
@@ -46,7 +82,8 @@ plugins:
   - search
 
 nav:
-  - 首页: index.md  
+  - 首页: index.md
+  - 学习路线: learning-paths.md  
   - LeetCode:
     - 介绍: leetcode/index.md
     - 哈希:
@@ -135,9 +172,11 @@ nav:
   #   - glossary: SAR/glossary.md
   # - CS336:
   #   - Home: CS336/home.md
+  - 关于: about.md
   - 更新日志: 
     - 更新日志: 更新日志/changelog.md
 
 watch:
   - docs/
   - mkdocs.yml
+
