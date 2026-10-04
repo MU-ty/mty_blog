@@ -40,6 +40,48 @@ hide:
 
 <div class="home-strip"><span>不止记住答案，更要理解为什么。</span><span>ALGORITHMS &nbsp; / &nbsp; AI &nbsp; / &nbsp; NOTES</span></div>
 
+<section class="home-section project-section" markdown="1">
+<div class="section-heading" markdown="1">
+
+<div markdown="1">
+
+<p class="eyebrow">SELECTED PROJECTS</p>
+
+## 从想法到可以运行的作品
+
+</div>
+
+[查看全部项目 :material-arrow-top-right:](https://github.com/MU-ty?tab=repositories){ .text-link }
+
+</div>
+
+<p class="project-intro">这里不只展示 GitHub 主页置顶仓库，也收录我在全栈开发、AI 应用、可视化与计算机基础方向的持续实践。</p>
+
+<div class="project-grid" markdown="1">
+
+[<span class="project-topline"><span class="project-number">01</span><span class="project-status">FEATURED</span></span><span class="project-name">Free Canvas</span><span class="project-description">基于 React、TypeScript 与 Pixi.js 的高性能在线画布编辑器，支持流程图、UML 和思维导图等大规模节点场景。</span><span class="project-meta"><span>TypeScript · Pixi.js</span><span>★ 9 · Fork 2</span></span><span class="project-open">查看项目 ↗</span>](https://github.com/MU-ty/free-canvas){ .project-card .project-featured }
+
+[<span class="project-topline"><span class="project-number">02</span><span class="project-status">FEATURED</span></span><span class="project-name">Tiny Redis Blog</span><span class="project-description">Spring Boot、MySQL 与 Redis 构建的全栈博客，并包含使用 C++20 实现的 RESP2 Redis 学习服务器。</span><span class="project-meta"><span>C++20 · Spring Boot</span><span>MIT License</span></span><span class="project-open">查看项目 ↗</span>](https://github.com/MU-ty/tiny-redis-blog){ .project-card .project-featured }
+
+[<span class="project-topline"><span class="project-number">03</span><span class="project-icon">:material-castle:</span></span><span class="project-name">Minecraft Guilin City Walk</span><span class="project-description">把桂林山水、城市漫步与 Minecraft 像素艺术融合在一起的互动导览网站。</span><span class="project-meta"><span>JavaScript</span><span>★ 5 · Fork 3</span></span>](https://github.com/MU-ty/Minecraft-Guilin-City-Walk-TRAE){ .project-card }
+
+[<span class="project-topline"><span class="project-number">04</span><span class="project-icon">:material-robot-outline:</span></span><span class="project-name">AI Office Assistant</span><span class="project-description">面向办公场景的 AI 助手实践，探索知识组织、智能处理与现代 Web 交互。</span><span class="project-meta"><span>TypeScript</span><span>★ 3</span></span>](https://github.com/MU-ty/AI-Office-Assistant){ .project-card }
+
+[<span class="project-topline"><span class="project-number">05</span><span class="project-icon">:material-file-account-outline:</span></span><span class="project-name">Resume Analyzer</span><span class="project-description">分析简历与岗位的匹配程度，帮助快速识别能力关键词与需要补充的内容。</span><span class="project-meta"><span>Python</span><span>★ 4</span></span>](https://github.com/MU-ty/resume_analyzer){ .project-card }
+
+[<span class="project-topline"><span class="project-number">06</span><span class="project-icon">:material-lightbulb-on-outline:</span></span><span class="project-name">ExpoMind</span><span class="project-description">围绕信息理解与智能应用展开的 Python 项目，把新的想法快速做成可验证原型。</span><span class="project-meta"><span>Python</span><span>★ 3 · Fork 1</span></span>](https://github.com/MU-ty/ExpoMind){ .project-card }
+
+[<span class="project-topline"><span class="project-number">07</span><span class="project-icon">:material-desktop-classic:</span></span><span class="project-name">AIQt</span><span class="project-description">使用 Qt 构建的大模型桌面应用实验，主要围绕 Ollama 的本地模型调用与交互。</span><span class="project-meta"><span>Qt · Ollama</span><span>★ 1</span></span>](https://github.com/MU-ty/AIQt){ .project-card }
+
+[<span class="project-topline"><span class="project-number">08</span><span class="project-icon">:material-school-outline:</span></span><span class="project-name">CS Study</span><span class="project-description">面向计算机科学自学的知识网站，将课程、资料与阶段性学习成果组织起来。</span><span class="project-meta"><span>HTML</span><span>在线站点</span></span>](https://github.com/MU-ty/cs-study){ .project-card }
+
+[<span class="project-topline"><span class="project-number">09</span><span class="project-icon">:material-language-cpp:</span></span><span class="project-name">C++ Study</span><span class="project-description">记录 C++ 语言学习过程中的语法、练习与基础编程实验。</span><span class="project-meta"><span>C++</span><span>★ 2</span></span>](https://github.com/MU-ty/Cpp-study){ .project-card }
+
+[<span class="project-topline"><span class="project-number">10</span><span class="project-icon">:material-language-c:</span></span><span class="project-name">C Language Study</span><span class="project-description">从基础语法开始整理 C 语言练习，持续积累底层编程能力。</span><span class="project-meta"><span>C</span><span>学习记录</span></span>](https://github.com/MU-ty/C-language-study){ .project-card }
+
+</div>
+</section>
+
 <section class="home-section" markdown="1">
 <div class="section-heading" markdown="1">
 
@@ -120,5 +162,4 @@ hide:
 </section>
 
 </div>
-
 
