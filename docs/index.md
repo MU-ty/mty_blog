@@ -130,9 +130,9 @@ hide:
 </div>
 <div class="topic-grid" markdown="1">
 
-[<span class="topic-icon">:material-code-braces:</span><span class="card-index">01</span><span class="card-title">算法与数据结构</span><span class="card-desc">从哈希、双指针到二分查找。通过题解、边界分析与复杂度比较，积累可迁移的解题思路。</span><span class="card-tags">LeetCode · Python · 解题模式</span><span class="card-link">进入算法笔记 <span>↗</span></span>](<leetcode/index.md>){ .topic-card }
+[<span class="topic-icon">:material-server:</span><span class="card-index">01</span><span class="card-title">后端工程</span><span class="card-desc">从 HTTP、数据库和缓存出发，逐步掌握异步任务、可靠性、可观测性与服务部署。</span><span class="card-tags">API · MySQL · Redis · CI/CD</span><span class="card-link">进入后端路线 <span>↗</span></span>](<Backend/index.md>){ .topic-card }
 
-[<span class="topic-icon">:material-brain:</span><span class="card-index">02</span><span class="card-title">深度学习</span><span class="card-desc">从线性代数和概率出发，走进优化、卷积网络与注意力机制。把数学直觉与模型结构联系起来。</span><span class="card-tags">数学基础 · 神经网络 · Attention</span><span class="card-link">进入学习笔记 <span>↗</span></span>](<Deep Learning/index.md>){ .topic-card }
+[<span class="topic-icon">:material-robot-outline:</span><span class="card-index">02</span><span class="card-title">AI Agent</span><span class="card-desc">围绕工具调用、上下文工程、RAG、Runtime 与评估，构建可以稳定完成任务的 Agent 系统。</span><span class="card-tags">Tools · MCP · RAG · Eval</span><span class="card-link">进入 Agent 路线 <span>↗</span></span>](<Agent/index.md>){ .topic-card }
 
 [<span class="topic-icon">:material-map-outline:</span><span class="card-index">03</span><span class="card-title">有方向地学习</span><span class="card-desc">不知道先读哪一篇？按基础、专题和实践三个阶段，找到适合自己的起点。</span><span class="card-tags">阅读顺序 · 练习建议 · 复盘清单</span><span class="card-link">选择学习路线 <span>↗</span></span>](<learning-paths.md>){ .topic-card .topic-card-accent }
 
@@ -184,9 +184,9 @@ hide:
 
 ### 正在关注
 
-- **算法思维** — 从解出一道题，到理解一类问题
-- **深度学习** — 从基础推导，到模型直觉
-- **前端与 Agent** — 在实践中探索新的工具
+- **后端工程** — 从接口实现，到可靠服务
+- **AI Agent** — 从模型调用，到完整任务系统
+- **算法与模型基础** — 为工程实践建立扎实底座
 
 [查看更新记录 :material-arrow-right:](更新日志/changelog.md){ .text-link }
 
