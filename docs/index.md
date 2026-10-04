@@ -1,6 +1,6 @@
 ---
 title: 首页
-description: MU-ty 的学习与实践笔记，涵盖算法、深度学习与编程。
+description: 穆天宇的个人技术博客，聚焦后端工程、AI Agent 与大模型应用落地。
 hide:
   - navigation
   - toc
@@ -11,29 +11,28 @@ hide:
 <section class="blog-hero" markdown="1">
 <div class="hero-copy" markdown="1">
 
-<p class="eyebrow">MU-TY / DIGITAL GARDEN</p>
+<p class="eyebrow">MU TIANYU / BACKEND & AI AGENT</p>
 
-# 把好奇心，<br>写成代码。
+# 把智能体，<br>做成可靠系统。
 
-<p class="hero-intro">你好，我是 MU-ty。这里收集我的算法题解、深度学习笔记与编程实践。把问题拆开，把原理想清楚，再把知识一点点连起来。</p>
+<p class="hero-intro">你好，我是穆天宇，桂林电子科技大学计算机科学与技术专业本科生。聚焦后端工程与 AI Agent，关注 LLM、RAG、多模态 AIGC 及其在真实业务中的工程化落地。</p>
 
 <div class="hero-actions" markdown="1">
 
-[开始探索 :material-arrow-right:](learning-paths.md){ .blog-button }
-[认识一下我 :material-arrow-top-right:](about.md){ .blog-button .blog-button-secondary }
+[查看我的经历 :material-arrow-down:](#experience){ .blog-button }
+[Agent 学习路线 :material-arrow-top-right:](Agent/index.md){ .blog-button .blog-button-secondary }
 
 </div>
 
-<p class="hero-note">保持好奇 · 认真记录 · 持续构建</p>
+<p class="hero-note">FastAPI · RAG · Multi-Agent · Docker · AIGC</p>
 
 </div>
-<div class="hero-art" aria-hidden="true">
+<div class="hero-art hero-profile">
 <div class="art-grid"></div>
-<div class="art-orbit orbit-one"></div>
-<div class="art-orbit orbit-two"></div>
-<div class="art-core"><span>&lt;/&gt;</span><small>LEARN. BUILD. SHARE.</small></div>
-<span class="art-label label-one">01 / ALGORITHMS</span>
-<span class="art-label label-two">02 / DEEP LEARNING</span>
+<img class="hero-avatar" src="assets/profile/avatar.webp" alt="穆天宇的头像">
+<div class="profile-card"><strong>穆天宇 · MU-ty</strong><span>Backend / AI Agent Engineer</span></div>
+<span class="art-label label-one">GUET · COMPUTER SCIENCE</span>
+<span class="art-label label-two">BUILD · EVALUATE · SHIP</span>
 <span class="art-spark spark-one"></span><span class="art-spark spark-two"></span>
 </div>
 </section>
@@ -59,6 +58,51 @@ hide:
   <img src="assets/projects/growth-journal.webp" alt="成长坐标网站首页，展示实习记录与 LeetCode Hot 100 学习进度" loading="lazy">
   <span>LIVE SITE <b>↗</b></span>
 </a>
+
+</section>
+
+<section class="home-section resume-section" id="experience" markdown="1">
+<div class="section-heading" markdown="1">
+
+<div markdown="1">
+
+<p class="eyebrow">EXPERIENCE & IMPACT</p>
+
+## 在真实项目里解决复杂问题
+
+</div>
+
+[查看 GitHub :material-arrow-top-right:](https://github.com/MU-ty){ .text-link }
+
+</div>
+
+<div class="resume-summary" markdown="1">
+
+<div class="resume-lead" markdown="1">
+
+### 从模型能力到工程落地
+
+拥有 AI 视频生成、智能面试、长文档翻译与企业办公助手等项目经验，能够从需求分析、技术选型和系统架构推进到开发、部署与稳定性优化。
+
+<div class="skill-cloud"><span>Python</span><span>FastAPI</span><span>LangChain</span><span>LlamaIndex</span><span>RAG</span><span>MCP</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>Multi-Agent</span></div>
+
+</div>
+
+<div class="resume-facts"><span><strong>3</strong>段 AI / 科研实习</span><span><strong>2024–2028</strong>计算机科学与技术</span><span><strong>多项</strong>技术竞赛与社区荣誉</span></div>
+
+</div>
+
+<div class="experience-grid" markdown="1">
+
+<article class="experience-card"><span class="experience-date">2026.07 — 2026.09</span><h3>bilibili · Peanut</h3><p class="experience-role">Agent 开发实习生</p><p>参与 Scene 级 AI 视频生成 Pipeline，完成分镜规划、素材检索、Prompt 构建、视频生成、Timeline 映射与 Draft 写回；使用有界并发和异常降级提升长耗时任务稳定性。</p><span class="experience-tags">AI Video · asyncio · Multimodal</span></article>
+
+<article class="experience-card"><span class="experience-date">2025.10 — 2026.01</span><h3>武汉金银湖实验室</h3><p class="experience-role">科研开发实习</p><p>构建面向 RST 结构化文档的长文档翻译智能体，支持批量翻译、双语摘要、局部重译，并完成翻译成果的静态网页部署。</p><span class="experience-tags">LLM Agent · RST · GitHub Pages</span></article>
+
+<article class="experience-card"><span class="experience-date">2025.07 — 2025.08</span><h3>华为北京办事处 AI 工作台</h3><p class="experience-role">AI 应用开发</p><p>搭建面试知识库 RAG 与简历岗位匹配体系，融合 TF-IDF、向量检索、LDA、规则匹配和 LLM 综合评估，输出结构化分析报告。</p><span class="experience-tags">RAG · NLP · Matching</span></article>
+
+</div>
+
+<div class="achievement-strip"><span><b>TRAE Fellow</b> · 2025 年度社区突出贡献奖</span><span><b>二等奖</b> · 武汉 1024 智能体开发大赛</span><span><b>三等奖</b> · AdventureX 2026 bilibili 赛道</span><span><b>铜奖</b> · Build with Qwen GenZ</span></div>
 
 </section>
 
