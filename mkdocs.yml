@@ -1,6 +1,6 @@
 site_name: MU-ty's Blog
 site_url: https://mu-ty.github.io/mty_blog/
-site_description: 记录算法、深度学习与编程实践，在学习中建立自己的知识体系。
+site_description: 记录后端工程、AI Agent、算法与编程实践，在学习中建立自己的知识体系。
 site_author: MU-ty
 repo_url: https://github.com/MU-ty/mty_blog
 repo_name: MU-ty/mty_blog
@@ -83,7 +83,9 @@ plugins:
 
 nav:
   - 首页: index.md
-  - 学习路线: learning-paths.md  
+  - 学习路线: learning-paths.md
+  - 后端: Backend/index.md
+  - Agent: Agent/index.md
   - LeetCode:
     - 介绍: leetcode/index.md
     - 哈希:
@@ -139,8 +141,6 @@ nav:
       - KMP算法: leetcode/补充/KMP算法.md
   
 
-  # - Agent: Agent/index.md
-  # - Backend: Backend/index.md
   - Deep Learning: 
     - Deep Learning/index.md
     - 1.线性代数基础: Deep Learning/1.线性代数.md
@@ -179,4 +179,3 @@ nav:
 watch:
   - docs/
   - mkdocs.yml
-
