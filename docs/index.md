@@ -57,6 +57,16 @@ hide:
 
 <p class="project-intro">这里不只展示 GitHub 主页置顶仓库，也收录我在全栈开发、AI 应用、可视化与计算机基础方向的持续实践。</p>
 
+<div class="project-gallery" markdown="1">
+
+[![Free Canvas 在线画布编辑器界面](assets/projects/free-canvas.webp){ loading=lazy }<span class="project-shot-caption"><span><strong>Free Canvas</strong>在线画布编辑器</span><span>01 / CANVAS ↗</span></span>](https://github.com/MU-ty/free-canvas){ .project-shot .project-shot-wide }
+
+[![AI Office Assistant 智能办公助手界面](assets/projects/ai-office.webp){ loading=lazy }<span class="project-shot-caption"><span><strong>AI Office Assistant</strong>多工具办公智能体</span><span>02 / AGENT ↗</span></span>](https://github.com/MU-ty/AI-Office-Assistant){ .project-shot }
+
+[![Resume Analyzer 智能简历分析界面](assets/projects/resume-analyzer.webp){ loading=lazy }<span class="project-shot-caption"><span><strong>Resume Analyzer</strong>简历与岗位匹配分析</span><span>03 / AI TOOL ↗</span></span>](https://github.com/MU-ty/resume_analyzer){ .project-shot }
+
+</div>
+
 <div class="project-grid" markdown="1">
 
 [<span class="project-topline"><span class="project-number">01</span><span class="project-status">FEATURED</span></span><span class="project-name">Free Canvas</span><span class="project-description">基于 React、TypeScript 与 Pixi.js 的高性能在线画布编辑器，支持流程图、UML 和思维导图等大规模节点场景。</span><span class="project-meta"><span>TypeScript · Pixi.js</span><span>★ 9 · Fork 2</span></span><span class="project-open">查看项目 ↗</span>](https://github.com/MU-ty/free-canvas){ .project-card .project-featured }
