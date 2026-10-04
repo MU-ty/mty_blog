@@ -40,6 +40,28 @@ hide:
 
 <div class="home-strip"><span>不止记住答案，更要理解为什么。</span><span>ALGORITHMS &nbsp; / &nbsp; AI &nbsp; / &nbsp; NOTES</span></div>
 
+<section class="growth-spotlight" markdown="1">
+
+<div class="growth-copy" markdown="1">
+
+<p class="eyebrow">NEW · GROWTH ARCHIVE</p>
+
+## 成长坐标：把走过的路，变成继续前行的底气
+
+<p>一个持续更新的个人成长档案，集中记录实习收获、人脉图谱、LeetCode Hot 100、计算机基础、随手记与面试复盘。每一次输入，都沉淀为下一次出发可以复用的经验。</p>
+
+[进入成长坐标 :material-arrow-top-right:](https://internship-growth-journal.mut520854.chatgpt.site/){ .md-button .md-button--primary }
+[看看 Hot 100](https://internship-growth-journal.mut520854.chatgpt.site/){ .growth-secondary }
+
+</div>
+
+<a class="growth-preview" href="https://internship-growth-journal.mut520854.chatgpt.site/" target="_blank" rel="noopener" aria-label="访问成长坐标网站">
+  <img src="assets/projects/growth-journal.webp" alt="成长坐标网站首页，展示实习记录与 LeetCode Hot 100 学习进度" loading="lazy">
+  <span>LIVE SITE <b>↗</b></span>
+</a>
+
+</section>
+
 <section class="home-section project-section" markdown="1">
 <div class="section-heading" markdown="1">
 
